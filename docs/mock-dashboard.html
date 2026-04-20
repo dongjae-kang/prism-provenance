@@ -1321,7 +1321,12 @@ function Footer() {
 
 function App() {
   const [tab, setTab] = useState('ranking');
-  const [selectedTopicId, setSelectedTopicId] = useState(null);
+  const [selectedTopicId, setSelectedTopicId] = useState(() => {
+    if (typeof window !== 'undefined' && window.location.hash === '#spotlight') {
+      return 1;
+    }
+    return null;
+  });
 
   if (selectedTopicId !== null) {
     return (
