@@ -420,10 +420,62 @@ function Slide5Pentagon({ onPrev, onNext }) {
 }
 
 // ============================================
-// SLIDE 6 — MEANING OF CONTRIBUTION
+// SLIDE 6 — INVITATION (HUMBLE)
 // ============================================
 
-function Slide6Meaning() {
+function Slide6Invitation() {
+  const layers = [
+    {
+      title: '학술적으로 공유되는 원 데이터',
+      desc: '한국 정치 특유의 관계 — 계파 · 지역 지지 · 발언 history — 를 KG에 반영한 원 데이터. 세계적으로도 경험적 데이터가 부족한 영역에 놓이는 기록.',
+    },
+    {
+      title: '공공 설계의 새 사례',
+      desc: '편향을 코드로 강제 보정하지 않고 투명성으로 해결하는 접근. 다른 국가의 유사 도구 설계에도 참조될 수 있는 공공 설계 사례.',
+    },
+    {
+      title: '한국 정치 데이터의 실무 선행 사례',
+      desc: '도메인 감수의 깊이를 어디까지 감당할 것인가의 균형점 기록. 한국 정치 데이터 프로젝트의 첫 실무 문서가 될 수 있다.',
+    },
+    {
+      title: 'AI 윤리·거버넌스의 실증 사례',
+      desc: 'Recursive AI-Human Gate threshold를 한국어 맥락에서 구체적으로 조율한 기록. AI 윤리·거버넌스 설계의 실증 자료.',
+    },
+  ];
+
+  return (
+    <div className="h-full flex flex-col justify-center max-w-6xl mx-auto w-full">
+      <SectionTag>§5 · 이 작업이 남기는 것</SectionTag>
+      <p className="text-base md:text-lg text-slate-600 leading-[1.8] mb-10 max-w-4xl border-l-2 border-slate-300 pl-6">
+        이 프로젝트가 남기는 기록은 네 가지 층위에서 외부 영역에 닿는다.
+      </p>
+      <div className="space-y-5">
+        {layers.map((layer, i) => (
+          <div
+            key={i}
+            className="grid grid-cols-12 gap-4 md:gap-6 border-l-2 border-slate-300 pl-5 md:pl-6 py-1"
+          >
+            <div className="col-span-12 md:col-span-5">
+              <div className="text-[10px] uppercase tracking-[0.22em] text-slate-400 font-bold mb-1.5 tabular-nums">
+                {pad2(i + 1)}
+              </div>
+              <h3 className="text-base md:text-xl font-bold text-slate-900 leading-[1.35]">{layer.title}</h3>
+            </div>
+            <div className="col-span-12 md:col-span-7">
+              <p className="text-sm md:text-base text-slate-700 leading-[1.75]">{layer.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+// ============================================
+// SLIDE 7 — OPEN JUDGMENTS
+// ============================================
+
+function Slide7Meaning() {
   const areas = [
     {
       title: 'Knowledge graph의 한국 정치 특화 semantics',
@@ -445,7 +497,7 @@ function Slide6Meaning() {
 
   return (
     <div className="h-full flex flex-col justify-center max-w-6xl mx-auto w-full">
-      <SectionTag>§5 · 남아 있는 판단들</SectionTag>
+      <SectionTag>§6 · 남아 있는 판단들</SectionTag>
       <div className="space-y-6">
         {areas.map((area, i) => (
           <div
@@ -485,7 +537,7 @@ function Slide7Timeline() {
 
   return (
     <div className="h-full flex flex-col justify-center max-w-6xl mx-auto w-full">
-      <SectionTag>§6 · 일정</SectionTag>
+      <SectionTag>§7 · 일정</SectionTag>
       <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-4 leading-[1.1] tracking-tight tabular-nums">
         2026-04-20 <span className="text-slate-300 font-light">→</span> 2026-06-03
       </h2>
@@ -531,7 +583,7 @@ function Slide7Timeline() {
 function Slide8LongTerm() {
   return (
     <div className="h-full flex flex-col justify-center max-w-6xl mx-auto w-full">
-      <SectionTag>§7 · 장기적 지향</SectionTag>
+      <SectionTag>§8 · 장기적 지향</SectionTag>
       <h2 className="text-4xl md:text-6xl font-bold text-slate-900 mb-12 leading-[1.1] tracking-tight">
         단기는 2026년 6월.<br />
         <span className="text-slate-600">장기는 연구 영역의 기여.</span>
@@ -631,7 +683,7 @@ function Slide9Contact() {
 function Deck() {
   const [current, setCurrent] = useState(0);
 
-  const total = 10;
+  const total = 11;
 
   const next = useCallback(() => setCurrent((c) => Math.min(c + 1, total - 1)), []);
   const prev = useCallback(() => setCurrent((c) => Math.max(c - 1, 0)), []);
@@ -664,7 +716,8 @@ function Deck() {
     <Slide3 />,
     <Slide4 onPrev={prev} onNext={next} />,
     <Slide5Pentagon onPrev={prev} onNext={next} />,
-    <Slide6Meaning />,
+    <Slide6Invitation />,
+    <Slide7Meaning />,
     <Slide7Timeline />,
     <Slide8LongTerm />,
     <Slide9Contact />,
