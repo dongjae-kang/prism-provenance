@@ -28,7 +28,10 @@
 
 ## §4. 대시보드는 이렇게 작동한다
 
-[Mock Dashboard — artifact로 구현 예정]
+**실제 mockup을 직접 열어볼 수 있습니다**
+→ https://dongjae-kang.github.io/prism-provenance/mock-dashboard.html
+
+
 
 대시보드는 주간 단위로 갱신된다. 선거 시기를 기준으로 주 2회 업데이트를 목표로 한다. 유권자가 특정 사건에 대해 "지금 내가 어떤 담론 환경에 놓여 있는가"를 **3분 안에** 파악할 수 있도록 설계한다.
 
