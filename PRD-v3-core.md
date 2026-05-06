@@ -470,7 +470,7 @@ Public launch (5/30) 전 필수 통과:
 ## Document Metadata
 
 **Version**: v3.0 Core (with Hook Layer + Timeline Lock + Week 1 Collaboration Flow)
-**Last updated**: 2026-05-06 (NYC, footer simplified + 색상 가이드 갱신 + 샘 호칭/표현 정정 + 이번 주 협업 흐름)
+**Last updated**: 2026-05-06 (NYC, footer simplified + 색상 가이드 갱신 + 운영 layer 정리 + 이번 주 협업 흐름)
 **Authors**: Jack Kang + Claude (writing assist, all decisions Jack-led)
 **Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm + timeline lock
 **Demo hard-deadline**: 2026-05-09 ~ 05-10 (다음 작업 — 새 세션에서 데모 빌드)
