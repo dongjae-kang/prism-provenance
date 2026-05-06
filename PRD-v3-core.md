@@ -2,9 +2,18 @@
 
 *한국 정치 정보가 어떻게 변형되며 퍼지는지를 매일 추적하는 흐름 매체*
 
-**Status**: Design locked (2026-05-05)
-**Launch**: 2026-05-30 (target)
+**Status**: PRD locked (2026-05-06, hook layer + timeline integrated)
+**Demo hard-deadline**: 2026-05-09 ~ 05-10 (디자인 + hook 통합 작동 데모)
+**Wrap-up**: 2026-05-16 ~ 05-17 (QA + final polish)
+**Launch target**: 2026-05-30 (선거 D-4)
 **First application**: 2026-06-03 지방선거 (Track 1.5)
+
+**워크플로우:**
+```
+PRD ─→ Lo-Fi (5/6) ─→ Hi-Fi (5/8) ─→ Frontend (5/10) ─→ QA (5/16~17)
+                                    ↗
+                  Backend (5/7~8) ─┘
+```
 
 이 문서는 **product spec**이다. 결정 reasoning, 거부된 alternatives, 운영 risk 등 의사결정 history는 [`PRD-v3.md`](./PRD-v3.md) (상세본) 참조.
 
@@ -354,14 +363,19 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 
 ---
 
-## 9. Milestones
+## 9. Milestones (5/6 timeline lock)
 
 | 시점 | 마일스톤 |
 |---|---|
-| **2026-05-10 (토)** | PRD v3 확정 + Claude Code 데모 빌드 + 김현미와 디자인 디테일 1차 점검 |
-| **2026-05-11 (월)** | Saetbyeol + Sam Lee 합류. 6명 team kick-off |
-| **2026-05-17 (일)** | Backend MVP demo + 카드 form factor 사이트 통합 + "How We Work" 페이지 초안 |
-| **2026-05-24 (일)** | Soft launch 준비 (beta 5-10명) + 한국 변호사 preliminary check |
+| **2026-05-06 (화)** | PRD v3 lock + Lo-Fi 시작 (Claude Code 데모 빌드 진입) |
+| **2026-05-07 (수) ~ 5/8 (목)** | Backend pipeline 시작 (재훈 리드, parallel) |
+| **2026-05-08 (목)** | Hi-Fi 도달 (카드 + hook layer 시각 디테일) |
+| **2026-05-09 (금) ~ 5/10 (토)** | **🔴 Demo hard-deadline.** 디자인 + hook 통합 작동 데모 |
+| **2026-05-10 (토)** | Frontend 통합 + 김현미 디자인 디테일 1차 점검 |
+| **2026-05-11 (월)** | Saetbyeol + Sam Lee 합류. 6명 team kick-off + 데모 walkthrough |
+| **2026-05-16 (토) ~ 5/17 (일)** | **🔴 QA + final polish.** Beta invite 직전 상태. |
+| **2026-05-18 ~ 5/23** | Beta 5-10명 invite + feedback 반영 + bug fix |
+| **2026-05-24 ~ 5/29** | Pre-launch backfill (시드 클레임 20-30개) + 한국 변호사 check |
 | **2026-05-30 (토)** | **Public launch.** Daily 5장 cadence 시작 |
 | **2026-06-01 ~ 6/2** | Election week escalation (daily 7-10장) |
 | **2026-06-03 (수)** | **선거일.** 실시간 monitoring + 사후 정리 |
@@ -449,10 +463,13 @@ Public launch (5/30) 전 필수 통과:
 
 ## Document Metadata
 
-**Version**: v3.0 Core (with Hook Layer)
-**Last updated**: 2026-05-06 (NYC, hook layer integrated)
+**Version**: v3.0 Core (with Hook Layer + Timeline Lock)
+**Last updated**: 2026-05-06 (NYC, timeline lock — demo 5/9~10, wrap-up 5/16~17)
 **Authors**: Jack Kang + Claude (writing assist, all decisions Jack-led)
-**Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm session (2030 secondary target felt pull)
+**Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm + timeline lock
+**Demo hard-deadline**: 2026-05-09 ~ 05-10 (다음 작업 — 새 세션에서 데모 빌드)
+**Wrap-up**: 2026-05-16 ~ 05-17 (QA + final polish)
+**Public launch**: 2026-05-30 (선거 D-4)
 **Companion document**: [`PRD-v3.md`](./PRD-v3.md) — 결정 reasoning, 거부된 alternatives, risk 상세
 
 ---
