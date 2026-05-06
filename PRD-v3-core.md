@@ -50,49 +50,60 @@
 
 ### 4.1 평일 카드 (월~금 매일 5장)
 
-모바일 우선, 카톡·X 공유 최적화. 구성:
+모바일 우선, 카톡·X 공유 최적화. 구성 (필수 12 + 조건부 2):
 
 1. **이슈 라벨** — 진입 식별자 (예: "주거")
-2. **카드 제목** — 이슈 + 한 줄 핵심
-3. **본문 (200-400자)** — 어떤 클레임이 어떻게 돌고 있는지 factual 기술
-4. **클레임 병렬 제시** — 2-4개 클레임을 발화자·발화일·발언과 함께
-5. **시간 순서 메타** — 각 클레임에 "가장 먼저 등장 / 24시간 후 / 익일 변형 / 주말 동안 확산"
-6. **출처 성격 메타** — "정치인 직접 발언 / 언론 인용 / 익명 커뮤니티 / 2차 가공 채널"
-7. **Canonical source 병렬** — 통계청·부처·후보 공식·data.go.kr 등 1-3개
-8. **출처 링크 (전부)** — 영상 + 원본
-9. **Provenance footer** — "PRISM은 발언을 분류하지 않습니다. 출처를 보여드립니다. 판단은 사용자 본인의 몫입니다. 사람이 검수했습니다."
-10. **공유 버튼** — 카톡, X, 링크 복사
+2. **N일째 추적 카운터** — 카드 좌상단 ("📍 14일째 추적 중")
+3. **카드 제목 — 수치 trajectory 포함** — 변형 폭이 제목에 직접 (예: "청년 무주택 통계: 35% → 50% → 60% (3일간)")
+4. **카드 hero — 수치 trajectory 시각화** — 제목 아래 mini chart로 변형 폭 visible
+5. **본문 (200-400자)** — factual 기술
+6. **클레임 병렬 제시** — 2-4개 클레임 (발화자·발화일·발언)
+7. **시간 순서 메타** — "가장 먼저 등장 / 24시간 후 / 익일 변형 / 주말 동안 확산"
+8. **출처 성격 메타** — "정치인 직접 / 언론 인용 / 익명 커뮤니티 / 2차 가공"
+9. **Canonical source 병렬** — 통계청·부처·후보 공식·data.go.kr 등 1-3개
+10. **출처 링크 (전부)** — 영상 + 원본
+11. **Provenance footer** — "PRISM은 발언을 분류하지 않습니다. 출처를 보여드립니다. 판단은 사용자 본인의 몫입니다. 사람이 검수했습니다."
+12. **공유 버튼** — 카톡, X, 링크 복사
 
-**카드 예시:**
+**조건부 (검토 후 채택):**
+- (a) **영상 썸네일** — 각 클레임 옆에 YouTube 썸네일. Recognition moment. 저작권·캐싱 김재훈 검토.
+- (b) **분광 아이콘** — 카드 좌상단 작은 PRISM 분광 SVG. 디자인 quality bar 통과 시만.
+
+**카드 예시 (hook layer 포함):**
 
 ```
-[이슈 라벨: 주거]
+◇ 14일째 추적 중                      [이슈 라벨: 주거]
 
-청년 무주택 — 이번 주 정치권 인용 통계와 원본
+청년 무주택 통계: 35% → 50% → 60%
+3일간의 변형
+
+[hero 시각화 — 변형 trajectory]
+35% ●━━━ 38% ●━━━ 50% ●━━━ 60% ●
+통계청    국토부    후보X    채널Z
 
 이번 주 정치 YouTube에서 청년 무주택 통계 인용이
-다음 세 가지 형태로 확산되었습니다.
+네 가지 수치로 등장했습니다.
 
 [클레임]
-1. 후보 X (4/27 영상)
+1. 후보 X (4/27 영상)            [영상 썸네일]
    • 발언: "청년 50% 무주택"
    • 시간: 가장 먼저 등장
    • 출처 성격: 정치인 직접 발언
 
-2. 후보 Y (4/28 토론회)
+2. 후보 Y (4/28 토론회)          [영상 썸네일]
    • 발언: "청년 38% 무주택"
-   • 시간: 24시간 후 (X 발언에 반박)
+   • 시간: 24시간 후
    • 출처 성격: 정치인 직접 발언
 
-3. 정치 채널 Z (4/29 영상)
+3. 정치 채널 Z (4/29 영상)       [영상 썸네일]
    • 발언: "청년 무주택 60% 시대"
-   • 시간: 익일 변형 (X 수치 확대)
-   • 출처 성격: 2차 가공 채널 (X 영상 인용)
+   • 시간: 익일 변형
+   • 출처 성격: 2차 가공 채널
 
 [관련 canonical source]
 - 통계청 2025 인구주택총조사: 청년 35% 무주택
 - 국토부 2025 보고서: 19~34세 무주택 38%
-- data.go.kr 청년주거실태 dataset (2025-12 갱신)
+- data.go.kr 청년주거실태 dataset
 
 [출처 링크 — 전부]
 
@@ -146,6 +157,58 @@ PRISM은 어떠한 평가 라벨도 부여하지 않는다.
 1. 법적 risk 최소화 (명예훼손법 + 공직선거법 250조·82조의4는 모두 *판단·평가 진술*에 적용)
 2. 사용자 자율성 존중 — 가르치는 톤 0
 3. 운영 부담 감소 — daily intensive cadence 가능
+
+### 4.5 Hook & Felt Pull layer
+
+정치 관심 적은 2030 secondary target의 felt pull을 의도적으로 높이는 layer. **재미가 아니라 substance의 surprise + 자기 정체성 신호**. 흐름 매체 정체성 (§1)과 같은 axis 위에 있는 hook만 채택.
+
+**채택된 hook 8개:**
+
+1. **카드 hero 수치 trajectory** (§4.1) — 제목 + mini chart에 변형 폭 직접 노출 ("35% → 50% → 60%"). Scroll에서 즉시 인지.
+
+2. **N일째 추적 카운터 (3-layer 통합)**
+   - Site-level: 사이트 홈 헤더 ("추적 중인 클레임 24개, 가장 오래된 것 21일째")
+   - Card-level: 카드 좌상단 라벨 ("📍 14일째 추적 중")
+   - Weekly Flow-level: 토요일 카드 핵심 지표 ("이 클레임 N일째 N차 변형")
+   - Backend schema에 클레임 ID + 시작일 + 변형 history 박힘 필수.
+
+3. **사이트 hero — "오늘의 흐름" Radial Spread 시각화**
+   - 진입 즉시 보이는 첫 visual element. 카드 list가 아니라 흐름 자체가 첫 인상.
+   - 중심 = canonical source, 바깥 = YouTube 변형 클레임. 분광 메타포와 시각적 일치.
+   - 색상 lock: 무지개 X (진영색), monochrome / 단일 cool tone / 출처 성격별 mapping 중 하나.
+   - A안 (Sankey) vs B안 (Radial) — 데모 단계에서 prototype 비교 후 quality 우월 안 final.
+
+4. **PRISM 분광 메타포 — Design Language (조건부 채택)**
+   - Logo + 사이트 hero + 카드 hero corner + brand voice ("이번 주의 스펙트럼")
+   - **Quality bar 통과 시만 채택.** 미달 시 drop, 단순 typography brand identity로 fallback.
+
+5. **사이트 hero 한 줄 lede (매일 갱신, factual only)**
+   - 신문 1면 lede 효과. 큰 글자 한 줄.
+   - 좋은 예: "오늘 청년 무주택 통계 인용이 네 가지 형태로 등장했습니다."
+   - 평가 표현 금지.
+
+6. **Weekly Flow 리더보드 (사실 metric only)**
+   - "이번 주 가장 멀리 간 클레임 / 가장 빠르게 변형된 / 가장 많이 인용된 source"
+   - 평가 ranking 금지 ("가장 왜곡된" 등 X).
+
+7. **카톡 미리보기 한 줄 hook**
+   - 큐레이션 워크플로우에 "공유 한 줄" 항목 추가. 본문과 별개로 카톡 description 슬롯.
+   - factual only. 평가 표현 금지.
+
+8. **정정 요청 채널** (§4.7로 분리, 신뢰 loop)
+
+**거절된 hook:**
+- 사용자 제보 → 운영 부담 + identity 미스매치 (PRISM은 추적 매체, 수집 매체 X)
+- 카톡 채널 weekly push → Track 1.5 scope 외, post-launch deferred
+- 무지개 색상 시각 메타포 → 진영색 회피 절대 lock
+
+**Pre-launch backfill 필수 (5/24~5/29):** 시각화 + 카운터가 launch day 빈약하지 않으려면 시드 클레임 20-30개 backfill 작업 필요. Daily cadence 5장 → 4장 일시 축소 허용.
+
+### 4.6 정정 요청 채널
+
+사용자가 카드 사실 오류 발견 시 정정 요청. Form 항목: 카드 URL + 정정 부분 + 근거 출처 link + (선택) 연락처. 24h 내 큐레이터 검토 + 응답. 검증된 정정은 retraction protocol에 따라 카드 revision (revision history visible).
+
+신뢰 loop: "사람이 검수했다 + 사용자도 정정 가능". Process Transparency Disclosure (§4.3)와 같은 axis.
 
 ---
 
@@ -315,19 +378,27 @@ Public launch (5/30) 전 필수 통과:
 - [ ] Weekly Flow 토요일 1장 첫 발행 성공 (5/24 또는 5/31)
 - [ ] Approver gate 모든 카드 적용 + checklist 6개 통과율 100%
 - [ ] 분류 라벨 위반 0건 (지난 1주)
-- [ ] 카톡 미리보기 정상 작동 (5개 device 테스트)
+- [ ] 카톡 미리보기 정상 작동 (5개 device 테스트) + 카톡 한 줄 hook 모든 카드 작성
 - [ ] Canonical Source Graph 후보자 매핑 ≥80% 완성
 - [ ] data.go.kr API 키 발급 + 자동 lookup 작동
 - [ ] About 페이지 + "How We Work" 페이지 노출
 - [ ] 한국 변호사 preliminary check 완료
 - [ ] 8개 이슈 카테고리 MECE 재검증 완료
 - [ ] 6명 팀 burn-out 신호 monitoring (weekly retro)
+- [ ] 사이트 hero "오늘의 흐름" 시각화 작동 + 시드 클레임 backfill 완료
+- [ ] N일째 카운터 site/card/Weekly Flow 3-layer 모두 작동
+- [ ] 분광 메타포 디자인 quality bar 통과 또는 drop 결정
+- [ ] 카드 hero 수치 trajectory 시각화 작동
+- [ ] 사이트 hero 한 줄 lede 매일 갱신 워크플로우 정착
+- [ ] Weekly Flow 리더보드 form factor 작동
+- [ ] 정정 요청 form 작동 + 24h retraction protocol 연결
+- [ ] (조건부) 영상 썸네일 저작권/캐싱 검토 완료 + 채택/거절 결정
 
 ---
 
 ## 11. Differentiation (한 줄)
 
-> **PRISM은 한국 정치 정보가 어떻게 변형되며 퍼졌나를 매일 추적하는 흐름 매체다.** Provenance를 분류 없이, 시간 순서 + 출처 성격 메타와 함께, canonical source graph + data.go.kr 기반으로 제공한다. 한국에 동일 layer의 매체 부재 — white space.
+> **PRISM은 한국 정치 정보가 어떻게 변형되며 퍼졌나를 매일 추적하는 흐름 매체다.** Provenance를 분류 없이, 시간 순서 + 출처 성격 메타와 함께, canonical source graph + data.go.kr 기반으로 제공한다. 흐름 매체 정체성을 매일 visible한 hook (시각화 hero + N일째 카운터 + 분광 메타포) 으로 surface. 한국에 동일 layer의 매체 부재 — white space.
 
 | 도구 | 강점 | PRISM 대비 약점 |
 |---|---|---|
@@ -336,7 +407,7 @@ Public launch (5/30) 전 필수 통과:
 | 슬로우뉴스 | 깊은 시사 분석 | Weekly+ cadence, 흐름 안 보여줌 |
 | SNU팩트체크 / JTBC팩트체크 / 뉴스타파 | 깊은 fact-check | True/False 라벨, 사후, YouTube 분석 안 함, 흐름 안 보여줌 |
 
-**우리는 정보가 어떻게 움직였나 (how it moved) — 한국에 prior art 없음.**
+**우리는 정보가 어떻게 움직였나 (how it moved) — 한국에 prior art 없음.** 흐름 매체 정체성을 시각화·카운터·메타포로 사용자가 매일 *느낄 수 있게* 한다.
 
 ---
 
@@ -378,10 +449,10 @@ Public launch (5/30) 전 필수 통과:
 
 ## Document Metadata
 
-**Version**: v3.0 (Core)
-**Last updated**: 2026-05-06 (NYC)
+**Version**: v3.0 Core (with Hook Layer)
+**Last updated**: 2026-05-06 (NYC, hook layer integrated)
 **Authors**: Jack Kang + Claude (writing assist, all decisions Jack-led)
-**Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅
+**Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm session (2030 secondary target felt pull)
 **Companion document**: [`PRD-v3.md`](./PRD-v3.md) — 결정 reasoning, 거부된 alternatives, risk 상세
 
 ---
