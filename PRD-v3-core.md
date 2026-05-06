@@ -183,7 +183,7 @@ PRISM은 어떠한 평가 라벨도 부여하지 않는다.
 3. **사이트 hero — "오늘의 흐름" Radial Spread 시각화**
    - 진입 즉시 보이는 첫 visual element. 카드 list가 아니라 흐름 자체가 첫 인상.
    - 중심 = canonical source, 바깥 = YouTube 변형 클레임. 분광 메타포와 시각적 일치.
-   - 색상 lock: 무지개 X (진영색), monochrome / 단일 cool tone / 출처 성격별 mapping 중 하나.
+   - 색상 가이드 (5/6): 무지개 가능 (diversify 메타포 — 빨강·파랑 모두 포함). 단 design 단계에서 (a) LGBTQ 함의 (b) 정보 시각화 위계 noise (c) 신뢰 매체 톤 — 세 layer 검토. 다른 후보: monochrome / 단일 cool tone / 출처 성격별 mapping.
    - A안 (Sankey) vs B안 (Radial) — 데모 단계에서 prototype 비교 후 quality 우월 안 final.
 
 4. **PRISM 분광 메타포 — Design Language (조건부 채택)**
@@ -208,7 +208,7 @@ PRISM은 어떠한 평가 라벨도 부여하지 않는다.
 **거절된 hook:**
 - 사용자 제보 → 운영 부담 + identity 미스매치 (PRISM은 추적 매체, 수집 매체 X)
 - 카톡 채널 weekly push → Track 1.5 scope 외, post-launch deferred
-- 무지개 색상 시각 메타포 → 진영색 회피 절대 lock
+- (5/6 갱신) 무지개 색상 — 초기 거부 → Jack reframing으로 조건부 채택 (diversify 메타포). LGBTQ 함의·시각화 noise·신뢰 톤 design 검토 필요.
 
 **Pre-launch backfill 필수 (5/24~5/29):** 시각화 + 카운터가 launch day 빈약하지 않으려면 시드 클레임 20-30개 backfill 작업 필요. Daily cadence 5장 → 4장 일시 축소 허용.
 
@@ -352,7 +352,7 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 | Governance + 이슈 큐레이션 보조 | 정아인 |
 | 디자인 / UX 리드 | 김현미 |
 | Provenance UI / 디자인 | Saetbyeol Leeyouk (MIT Media Lab) — **5/11 본격 합류** |
-| Frontend / 개발 | 이샘 (Sam Lee, EPFL Computer Science) — **이미 active member, 이번 주부터 협업** |
+| Frontend / 개발 | 샘 (Sam Lee, EPFL Computer Science) — **이번 주부터 함께 작업** |
 
 6명 모두 학업·직장·다른 프로젝트 병행. 일정은 마일스톤 단위.
 
@@ -371,7 +371,7 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 | **2026-05-08 (목)** | Hi-Fi 도달 (카드 + hook layer 시각 디테일) |
 | **2026-05-09 (금) ~ 5/10 (토)** | **🔴 Demo hard-deadline.** 디자인 + hook 통합 작동 데모 |
 | **2026-05-10 (토)** | Frontend 통합 + 김현미 디자인 디테일 1차 점검 |
-| **2026-05-11 (월)** | Saetbyeol 합류 (이샘은 이미 active). 6명 team kick-off + 데모 walkthrough |
+| **2026-05-11 (월)** | Saetbyeol 합류. 6명 team kick-off + 데모 walkthrough |
 | **2026-05-16 (토) ~ 5/17 (일)** | **🔴 QA + final polish.** Beta invite 직전 상태. |
 | **2026-05-18 ~ 5/23** | Beta 5-10명 invite + feedback 반영 + bug fix |
 | **2026-05-24 ~ 5/29** | Pre-launch backfill (시드 클레임 20-30개) + 한국 변호사 check |
@@ -383,8 +383,8 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 **이번 주 협업 흐름 (5/6~5/11):**
 1. **Jack** — PRD v3 바탕으로 Claude Code 데모 빌드
 2. **김현미** — 데모 보고 디자인 개선 (스크린샷 정리 + 디테일)
-3. **재훈 + 이샘 + Jack** — 회의로 개발 논의 (Backend 구조 / frontend 통합 / 기술 stack)
-4. **김현미 + 재훈 + 이샘 + Jack** — 기획 논의 필요한 부분 발생 시 feature 논의 1회 (예: 분광 메타포 quality bar, 시각화 A/B, 영상 썸네일 채택)
+3. **재훈 + 샘 + Jack** — 회의로 개발 논의 (Backend 구조 / frontend 통합 / 기술 stack)
+4. **김현미 + 재훈 + 샘 + Jack** — 기획 논의 필요한 부분 발생 시 feature 논의 1회 (예: 분광 메타포 quality bar, 시각화 A/B, 영상 썸네일 채택)
 5. **5/11** — Saetbyeol 합류 + 6명 kick-off + 데모 walkthrough
 
 ---
@@ -470,7 +470,7 @@ Public launch (5/30) 전 필수 통과:
 ## Document Metadata
 
 **Version**: v3.0 Core (with Hook Layer + Timeline Lock + Week 1 Collaboration Flow)
-**Last updated**: 2026-05-06 (NYC, footer simplified + 이샘 active member 정정 + 이번 주 협업 흐름 lock)
+**Last updated**: 2026-05-06 (NYC, footer simplified + 색상 가이드 갱신 + 샘 호칭/표현 정정 + 이번 주 협업 흐름)
 **Authors**: Jack Kang + Claude (writing assist, all decisions Jack-led)
 **Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm + timeline lock
 **Demo hard-deadline**: 2026-05-09 ~ 05-10 (다음 작업 — 새 세션에서 데모 빌드)
