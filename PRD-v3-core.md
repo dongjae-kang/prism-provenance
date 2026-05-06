@@ -71,7 +71,7 @@ PRD ─→ Lo-Fi (5/6) ─→ Hi-Fi (5/8) ─→ Frontend (5/10) ─→ QA (5/16
 8. **출처 성격 메타** — "정치인 직접 / 언론 인용 / 익명 커뮤니티 / 2차 가공"
 9. **Canonical source 병렬** — 통계청·부처·후보 공식·data.go.kr 등 1-3개
 10. **출처 링크 (전부)** — 영상 + 원본
-11. **Provenance footer** — "PRISM은 발언을 분류하지 않습니다. 출처를 보여드립니다. 판단은 사용자 본인의 몫입니다. 사람이 검수했습니다."
+11. **Provenance footer** — "PRISM은 발언을 분류하지 않습니다. 출처를 보여드립니다. 사람이 검수했습니다."
 12. **공유 버튼** — 카톡, X, 링크 복사
 
 **조건부 (검토 후 채택):**
@@ -118,7 +118,6 @@ PRD ─→ Lo-Fi (5/6) ─→ Hi-Fi (5/8) ─→ Frontend (5/10) ─→ QA (5/16
 
 PRISM은 발언을 분류하지 않습니다.
 출처를 보여드립니다.
-판단은 사용자 본인의 몫입니다.
 사람이 검수했습니다.
 
 [카톡 공유] [X 공유] [링크 복사]
@@ -353,7 +352,7 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 | Governance + 이슈 큐레이션 보조 | 정아인 |
 | 디자인 / UX 리드 | 김현미 |
 | Provenance UI / 디자인 | Saetbyeol Leeyouk (MIT Media Lab) — **5/11 본격 합류** |
-| Frontend / 개발 | 샘 리 (Sam Lee, EPFL Computer Science) — **5/11~ 본격 시작** |
+| Frontend / 개발 | 이샘 (Sam Lee, EPFL Computer Science) — **이미 active member, 이번 주부터 협업** |
 
 6명 모두 학업·직장·다른 프로젝트 병행. 일정은 마일스톤 단위.
 
@@ -372,7 +371,7 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 | **2026-05-08 (목)** | Hi-Fi 도달 (카드 + hook layer 시각 디테일) |
 | **2026-05-09 (금) ~ 5/10 (토)** | **🔴 Demo hard-deadline.** 디자인 + hook 통합 작동 데모 |
 | **2026-05-10 (토)** | Frontend 통합 + 김현미 디자인 디테일 1차 점검 |
-| **2026-05-11 (월)** | Saetbyeol + Sam Lee 합류. 6명 team kick-off + 데모 walkthrough |
+| **2026-05-11 (월)** | Saetbyeol 합류 (이샘은 이미 active). 6명 team kick-off + 데모 walkthrough |
 | **2026-05-16 (토) ~ 5/17 (일)** | **🔴 QA + final polish.** Beta invite 직전 상태. |
 | **2026-05-18 ~ 5/23** | Beta 5-10명 invite + feedback 반영 + bug fix |
 | **2026-05-24 ~ 5/29** | Pre-launch backfill (시드 클레임 20-30개) + 한국 변호사 check |
@@ -380,6 +379,13 @@ PRISM의 정체성 lock. 외부 압력에 대한 1차 응답 자료.
 | **2026-06-01 ~ 6/2** | Election week escalation (daily 7-10장) |
 | **2026-06-03 (수)** | **선거일.** 실시간 monitoring + 사후 정리 |
 | **2026-06-04 ~ 6/10** | Mandatory rest week + retro |
+
+**이번 주 협업 흐름 (5/6~5/11):**
+1. **Jack** — PRD v3 바탕으로 Claude Code 데모 빌드
+2. **김현미** — 데모 보고 디자인 개선 (스크린샷 정리 + 디테일)
+3. **재훈 + 이샘 + Jack** — 회의로 개발 논의 (Backend 구조 / frontend 통합 / 기술 stack)
+4. **김현미 + 재훈 + 이샘 + Jack** — 기획 논의 필요한 부분 발생 시 feature 논의 1회 (예: 분광 메타포 quality bar, 시각화 A/B, 영상 썸네일 채택)
+5. **5/11** — Saetbyeol 합류 + 6명 kick-off + 데모 walkthrough
 
 ---
 
@@ -463,8 +469,8 @@ Public launch (5/30) 전 필수 통과:
 
 ## Document Metadata
 
-**Version**: v3.0 Core (with Hook Layer + Timeline Lock)
-**Last updated**: 2026-05-06 (NYC, timeline lock — demo 5/9~10, wrap-up 5/16~17)
+**Version**: v3.0 Core (with Hook Layer + Timeline Lock + Week 1 Collaboration Flow)
+**Last updated**: 2026-05-06 (NYC, footer simplified + 이샘 active member 정정 + 이번 주 협업 흐름 lock)
 **Authors**: Jack Kang + Claude (writing assist, all decisions Jack-led)
 **Source decisions**: 2026-05-05 [[김재훈]] 콜 + 2026-05-05 [[김현미]] 1차 PRD 인계 미팅 + 2026-05-06 hook layer brainstorm + timeline lock
 **Demo hard-deadline**: 2026-05-09 ~ 05-10 (다음 작업 — 새 세션에서 데모 빌드)
