@@ -2131,7 +2131,13 @@ function SpreadHero({ setPage }) {
     kind: "origin",
   };
 
-  // YouTube 썸네일 카드 nodes (thumbnail bg gradients per spec)
+  // YouTube 썸네일 카드 nodes (실제 video ID + thumbnail URL).
+  // videoId가 있으면 실제 YT 썸네일 + watch link, 없으면 CSS gradient + search fallback.
+  // 후속에는 backend YouTube API에서 video ID + thumbnailUrl 직접 fetch.
+  const ytThumb = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  const ytWatch = (id) => `https://www.youtube.com/watch?v=${id}`;
+  const ytSearch = (q) => `https://www.youtube.com/results?search_query=${encodeURIComponent(q)}`;
+
   const nodes = [
     {
       id: "yh", x: 297, y: 195, w: 138, h: 102,
@@ -2140,7 +2146,9 @@ function SpreadHero({ setPage }) {
       time: "5/2 13:24", view: "3.5K",
       spec: "direct", lane: "yt",
       thumbColor: "linear-gradient(135deg, #88A77C 0%, #4A6B3F 50%, #2F4626 100%)",
-      youtubeId: "V2",
+      videoId: "6fhctwe2IzU",
+      thumbnailUrl: ytThumb("6fhctwe2IzU"),
+      youtubeUrl: ytWatch("6fhctwe2IzU"),
     },
     {
       id: "mbc", x: 530, y: 90, w: 180, h: 130,
@@ -2150,7 +2158,9 @@ function SpreadHero({ setPage }) {
       spec: "direct", lane: "yt",
       thumbColor: "linear-gradient(135deg, #A8C39B 0%, #5B7E4F 50%, #2F4626 100%)",
       featured: true,
-      youtubeId: "V5",
+      videoId: "MQhr8gX8Hxg",
+      thumbnailUrl: ytThumb("MQhr8gX8Hxg"),
+      youtubeUrl: ytWatch("MQhr8gX8Hxg"),
     },
     {
       id: "bm", x: 595, y: 235, w: 158, h: 116,
@@ -2159,7 +2169,9 @@ function SpreadHero({ setPage }) {
       time: "5/2 22:50", view: "25K",
       spec: "partial", lane: "yt",
       thumbColor: "linear-gradient(135deg, #E5A767 0%, #C68A47 50%, #8A5E27 100%)",
-      youtubeId: "V7",
+      videoId: null,
+      thumbnailUrl: null,
+      youtubeUrl: ytSearch("경기지사 빅매치 양향자 추미애 격돌"),
     },
     {
       id: "kbs", x: 285, y: 360, w: 138, h: 102,
@@ -2168,7 +2180,9 @@ function SpreadHero({ setPage }) {
       time: "5/2 19:18", view: "2.9K",
       spec: "direct", lane: "yt",
       thumbColor: "linear-gradient(135deg, #88A77C 0%, #4A6B3F 50%, #2F4626 100%)",
-      youtubeId: "V4",
+      videoId: "OEBVgFIgsYc",
+      thumbnailUrl: ytThumb("OEBVgFIgsYc"),
+      youtubeUrl: ytWatch("OEBVgFIgsYc"),
     },
     {
       id: "shorts", x: 510, y: 395, w: 158, h: 110,
@@ -2177,7 +2191,9 @@ function SpreadHero({ setPage }) {
       time: "5/3 10:00", view: "13K",
       spec: "transformed", lane: "yt",
       thumbColor: "linear-gradient(135deg, #D8A1B7 0%, #B26F8C 50%, #7A4760 100%)",
-      youtubeId: "V8",
+      videoId: "oF3oiOVkK5k",
+      thumbnailUrl: ytThumb("oF3oiOVkK5k"),
+      youtubeUrl: ytWatch("oF3oiOVkK5k"),
     },
   ];
 
@@ -2212,9 +2228,14 @@ function SpreadHero({ setPage }) {
     !hoveredId || hoveredId === id ||
     edges.some((e) => (e.from === hoveredId && e.to === id) || (e.to === hoveredId && e.from === id));
 
-  // Click handler — 지금은 today page navigate. 후속에는 YT 링크 또는 카드 deep link.
+  // Click handler — YouTube 영상은 새 탭으로 watch URL 또는 search URL로 이동.
+  // Origin은 today page로 navigate. 후속에는 origin도 별도 detail page 가능.
   const handleNodeClick = (n) => {
-    if (setPage) setPage("today");
+    if (n.youtubeUrl) {
+      window.open(n.youtubeUrl, "_blank", "noopener,noreferrer");
+    } else if (setPage) {
+      setPage("today");
+    }
   };
 
   return (
@@ -2312,11 +2333,10 @@ function SpreadHero({ setPage }) {
           }}
           onFocus={(e) => e.currentTarget.style.outline = "none"}
         >
-          <div style={{ fontSize: "20px", marginBottom: 4, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))" }}>★</div>
-          <div style={{ fontSize: "13px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.01em" }}>
+          <div style={{ fontSize: "14px", fontWeight: 800, lineHeight: 1.3, letterSpacing: "-0.01em", marginBottom: 5 }}>
             {origin.label}
           </div>
-          <div style={{ fontSize: "10.5px", fontWeight: 500, color: "rgba(255,255,255,0.82)", marginTop: 4 }}>
+          <div style={{ fontSize: "10.5px", fontWeight: 500, color: "rgba(255,255,255,0.82)", marginBottom: 8 }}>
             {origin.sub}
           </div>
           <div style={{
@@ -2324,7 +2344,6 @@ function SpreadHero({ setPage }) {
             fontSize: "9px",
             letterSpacing: "0.12em",
             color: "rgba(255,255,255,0.92)",
-            marginTop: 6,
             padding: "2px 8px",
             border: "1px solid rgba(255,255,255,0.35)",
             borderRadius: "100px",
@@ -2368,25 +2387,49 @@ function SpreadHero({ setPage }) {
               onMouseDown={(e) => e.currentTarget.style.transform = "scale(0.985)"}
               onMouseUp={(e) => e.currentTarget.style.transform = "scale(1)"}
             >
-              {/* Thumbnail area */}
+              {/* Thumbnail area — real YT thumbnail w/ CSS gradient fallback */}
               <div style={{
                 position: "relative",
                 background: n.thumbColor,
                 aspectRatio: "16 / 9",
                 flexShrink: 0,
                 width: "100%",
+                overflow: "hidden",
               }}>
+                {/* Real YouTube thumbnail (img) */}
+                {n.thumbnailUrl && (
+                  <img
+                    src={n.thumbnailUrl}
+                    alt={n.title}
+                    loading="lazy"
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                    onError={(e) => { e.currentTarget.style.display = "none"; }}
+                  />
+                )}
+                {/* Bottom gradient overlay for text legibility */}
+                <div style={{
+                  position: "absolute",
+                  bottom: 0, left: 0, right: 0,
+                  height: "55%",
+                  background: "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.55) 100%)",
+                  pointerEvents: "none",
+                }} />
                 {/* Play button overlay */}
                 <div style={{
                   position: "absolute",
                   top: "50%", left: "50%",
                   transform: "translate(-50%, -50%)",
-                  width: "30px", height: "30px",
+                  width: "32px", height: "32px",
                   borderRadius: "50%",
-                  background: "rgba(255,255,255,0.95)",
+                  background: "rgba(0,0,0,0.78)",
                   display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "11px", color: "#000", paddingLeft: "2px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
+                  fontSize: "12px", color: "white", paddingLeft: "2px",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.25)",
                 }}>
                   ▶
                 </div>
@@ -2397,7 +2440,7 @@ function SpreadHero({ setPage }) {
                   fontSize: "9.5px",
                   fontWeight: 700,
                   color: "white",
-                  background: "rgba(0,0,0,0.58)",
+                  background: "rgba(0,0,0,0.78)",
                   padding: "2px 6px",
                   borderRadius: "4px",
                   fontFamily: "JetBrains Mono, monospace",
@@ -2412,7 +2455,7 @@ function SpreadHero({ setPage }) {
                   fontSize: "9px",
                   fontWeight: 600,
                   color: "rgba(255,255,255,0.96)",
-                  background: "rgba(0,0,0,0.45)",
+                  background: "rgba(0,0,0,0.65)",
                   padding: "2px 6px",
                   borderRadius: "4px",
                   fontFamily: "JetBrains Mono, monospace",
