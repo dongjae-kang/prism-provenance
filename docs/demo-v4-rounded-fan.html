@@ -679,13 +679,10 @@ const CARD_YANGHYANGJA = {
     { time: "05.02 — AM", actor: "국민의힘 경기지사 후보 선출", outlet: "정당회의 (시스템 외)",  spec: "canonical", note: "1차 사건 — 시스템 외 origin", link: "" },
     { time: "05.02",      actor: "디지털타임스 · 세계일보 · 국민일보 외 다수", outlet: "10여 개 매체 wire",   spec: "canonical", note: "동시 wire amplification", link: "https://www.dt.co.kr/article/12060480" },
     { time: "05.02 13:24", actor: "연합뉴스TV [뉴스쏙]", outlet: "YouTube 첫 hit",  spec: "direct",     view: 3540,  note: "YT lane 최초 영상", link: "" },
-    { time: "05.02 14:00", actor: "정치 채널 \"경기지사 빅매치\"", outlet: "정치 YouTube", spec: "partial",    view: 10218, note: "프레임 가공 — \"빅매치\"", link: "",
-      attachedComment: { quote: "양향자 후보님 응원합니다. 파이팅!", source: "빅매치 채널 댓글", likes: 3 } },
+    { time: "05.02 14:00", actor: "정치 채널 “경기지사 빅매치”", outlet: "정치 YouTube", spec: "partial",    view: 10218, note: "프레임 가공 — “빅매치”", link: "" },
     { time: "05.02 19:18", actor: "KBS 뉴스7", outlet: "지상파 직접 보도",   spec: "direct",     view: 2938,  note: "지상파 1차 보도", link: "" },
-    { time: "05.02 20:18", actor: "MBC 뉴스데스크", outlet: "지상파 직접 보도", spec: "direct",     view: 28805, note: "단일 최고 조회수 — 28.6% dominance", link: "https://imnews.imbc.com/replay/2026/nwdesk/article/6819591_37004.html",
-      attachedComment: { quote: "선거를 지려고 하는 당은 처음 본다 ㅋㅋ", source: "MBC 뉴스데스크 댓글", likes: 36 } },
-    { time: "05.03 10:00", actor: "shorts 확산", outlet: "정치 채널 shorts",   spec: "transformed", view: 13200, note: "shorts 형태 재유통", link: "",
-      attachedComment: { quote: "양당만 보도하지 말고 3당의 훌륭한 조응천 후보도…", source: "shorts 댓글", likes: 2 } },
+    { time: "05.02 20:18", actor: "MBC 뉴스데스크", outlet: "지상파 직접 보도", spec: "direct",     view: 28805, note: "단일 최고 조회수 — 28.6% dominance", link: "https://imnews.imbc.com/replay/2026/nwdesk/article/6819591_37004.html" },
+    { time: "05.03 10:00", actor: "shorts 확산", outlet: "정치 채널 shorts",   spec: "partial",    view: 13200, note: "shorts 형태 재유통", link: "" },
   ],
   diffusion: [
     { hour: 0,  cumulative: 0     },
@@ -882,10 +879,8 @@ const CARD_CANDIDATE_BG = {
   katalkLine: "익명 커뮤니티 캡처에서 시작된 의혹이 14일간 84만 조회까지 확산된 흐름을 추적했습니다.",
 };
 
-// v4 final: CARD_YANGHYANGJA를 featured first card로 부활 — 양향자 trend는 매체별 framing 변화
-// (여성 빅매치 / 광역단체장 격돌 / 첫 여성 맞대결 등)가 분광 적합. PRD-v4-core §4.1 reframe.
-// 데이터 기준: example-trend-walkthrough-REAL.md (8 video + 10+ 매체 + 33 댓글, 수집 5/4)
-const DAILY_CARDS = [CARD_YANGHYANGJA, CARD_HOUSING_YOUTH, CARD_AI_JOBS, CARD_HOUSING_SUPPLY, CARD_CANDIDATE_BG];
+// v4: CARD_YANGHYANGJA 제외 (단순 발표성 클레임 = PRISM 영역 X). PRD-v4-core §4.1 카드 콘텐츠 정의.
+const DAILY_CARDS = [CARD_HOUSING_YOUTH, CARD_AI_JOBS, CARD_HOUSING_SUPPLY, CARD_CANDIDATE_BG];
 
 // === Card 6: Weekly Flow ===
 const WEEKLY_FLOW = {
@@ -2113,376 +2108,246 @@ function ShareButton({ label }) {
 // HERO CARD — Editorial frontispiece
 // ============================================================
 
-// v4 final: ProvenanceGraph — YouTube 썸네일 network (origin → 매체 → reception)
-// 양향자 trend 실데이터 기반 (REAL 데이터 8 video + 10+ wire + 33 comment).
-// Sphere 대신 thumbnail card. 클릭 시 navigate (지금은 today page, 후속에는 YT 링크 또는 카드 deep link).
-function SpreadHero({ setPage }) {
-  const [hoveredId, setHoveredId] = useState(null);
-
-  // 양향자 trend nodes — coords in viewBox 720x520
-  // Each node: x/y center, w/h dimensions for thumbnail card
-  const origin = {
-    id: "origin",
-    x: 100, y: 240, w: 168, h: 116,
-    label: "국민의힘 후보 선출",
-    sub: "정당 회의 (시스템 외)",
-    time: "5/2 오전 KST",
-    spec: "canonical",
-    kind: "origin",
-  };
-
-  // YouTube 썸네일 카드 nodes (thumbnail bg gradients per spec)
-  const nodes = [
+// v4 rounded: ProvenanceFanDeck — YouTube 썸네일 스타일 카드 + 3D perspective fan
+// Frame shift: 같은 사실 (통계청 35%) → 매체별 다른 시각 4갈래.
+// Apple Music 앨범아트 3D 카드 패턴 (Jack 명시적 선호 [pt1 L7-12]).
+function SpreadHero() {
+  const items = [
     {
-      id: "yh", x: 297, y: 195, w: 138, h: 102,
-      title: "경기도지사 대진표 확정…민주 추미애 vs 국힘 양향자",
-      channel: "연합뉴스TV [뉴스쏙]",
-      time: "5/2 13:24", view: "3.5K",
-      spec: "direct", lane: "yt",
-      thumbColor: "linear-gradient(135deg, #88A77C 0%, #4A6B3F 50%, #2F4626 100%)",
-      youtubeId: "V2",
+      kind: "canonical",
+      org: "통계청",
+      title: "2025 인구주택총조사",
+      number: "35%",
+      time: "4월 26일",
+      delta: "기준점",
+      orgType: "정부 1차 통계",
+      bgGradient: "linear-gradient(135deg, #8E9CC1 0%, #5B6B91 50%, #3B4A6E 100%)",
+      icon: "📊",
     },
     {
-      id: "mbc", x: 530, y: 90, w: 180, h: 130,
-      title: "양향자-추미애 '첫 여성 경기지사' 맞대결‥16곳 대진표 완성",
-      channel: "MBC 뉴스데스크",
-      time: "5/2 20:18", view: "28K",
-      spec: "direct", lane: "yt",
-      thumbColor: "linear-gradient(135deg, #A8C39B 0%, #5B7E4F 50%, #2F4626 100%)",
-      featured: true,
-      youtubeId: "V5",
+      kind: "direct",
+      org: "국토부",
+      title: "2025 청년 주거 보고서",
+      number: "38%",
+      time: "4월 27일",
+      delta: "+29h",
+      orgType: "정부 발표 (방법론 차이)",
+      bgGradient: "linear-gradient(135deg, #6B8E5C 0%, #4A6B3F 50%, #324A2C 100%)",
+      icon: "📑",
     },
     {
-      id: "bm", x: 595, y: 235, w: 158, h: 116,
-      title: "경기지사 빅매치! 양향자 vs 추미애 격돌!",
-      channel: "정치 채널 빅매치",
-      time: "5/2 22:50", view: "25K",
-      spec: "partial", lane: "yt",
-      thumbColor: "linear-gradient(135deg, #E5A767 0%, #C68A47 50%, #8A5E27 100%)",
-      youtubeId: "V7",
+      kind: "partial",
+      org: "후보 X",
+      title: "토론회 영상 — “청년 50%가 집이 없습니다”",
+      number: "50%",
+      time: "4월 27일",
+      delta: "+36h",
+      orgType: "정치인 직접 발언",
+      view: "24K",
+      isYouTube: true,
+      bgGradient: "linear-gradient(135deg, #E5A767 0%, #C68A47 50%, #9C6B30 100%)",
+      icon: "🎙",
     },
     {
-      id: "kbs", x: 285, y: 360, w: 138, h: 102,
-      title: "野 경기지사 후보 양향자 확정…추미애와 첫 여성 광역단체장 대결",
-      channel: "KBS 뉴스7",
-      time: "5/2 19:18", view: "2.9K",
-      spec: "direct", lane: "yt",
-      thumbColor: "linear-gradient(135deg, #88A77C 0%, #4A6B3F 50%, #2F4626 100%)",
-      youtubeId: "V4",
-    },
-    {
-      id: "shorts", x: 510, y: 395, w: 158, h: 110,
-      title: "국민의힘 경기지사 후보 양향자 확정 #shorts",
-      channel: "shorts 재유통",
-      time: "5/3 10:00", view: "13K",
-      spec: "transformed", lane: "yt",
-      thumbColor: "linear-gradient(135deg, #D8A1B7 0%, #B26F8C 50%, #7A4760 100%)",
-      youtubeId: "V8",
+      kind: "transformed",
+      org: "정치 채널 Z",
+      title: "청년 무주택 60% 시대",
+      number: "60%",
+      time: "4월 29일",
+      delta: "+3d",
+      orgType: "2차 가공",
+      view: "87K",
+      isYouTube: true,
+      bgGradient: "linear-gradient(135deg, #D38AA8 0%, #B26F8C 50%, #7A4760 100%)",
+      icon: "▶",
     },
   ];
-
-  const allNodes = [origin, ...nodes];
-  const nodeMap = Object.fromEntries(allNodes.map((n) => [n.id, n]));
-
-  // edges
-  const edges = [
-    { from: "origin", to: "yh",     type: "originates", weight: 2.0, curve: -0.05 },
-    { from: "origin", to: "mbc",    type: "originates", weight: 3.5, curve: -0.20 },
-    { from: "origin", to: "bm",     type: "originates", weight: 3.0, curve: 0.06 },
-    { from: "origin", to: "kbs",    type: "originates", weight: 1.6, curve: 0.18 },
-    { from: "yh",     to: "shorts", type: "cites",      weight: 1.4, curve: 0.20 },
-    { from: "bm",     to: "shorts", type: "cites",      weight: 1.6, curve: -0.12 },
-    { from: "mbc",    to: "bm",     type: "phrase_overlap", weight: 1.2, curve: 0.18 },
-  ];
-
-  const curvedPath = (x1, y1, x2, y2, curve = 0.15) => {
-    const mx = (x1 + x2) / 2;
-    const my = (y1 + y2) / 2;
-    const dx = x2 - x1;
-    const dy = y2 - y1;
-    const len = Math.sqrt(dx * dx + dy * dy);
-    const nx = -dy / len;
-    const ny = dx / len;
-    const cx = mx + nx * len * curve;
-    const cy = my + ny * len * curve;
-    return `M ${x1} ${y1} Q ${cx} ${cy} ${x2} ${y2}`;
-  };
-
-  const isHighlighted = (id) =>
-    !hoveredId || hoveredId === id ||
-    edges.some((e) => (e.from === hoveredId && e.to === id) || (e.to === hoveredId && e.from === id));
-
-  // Click handler — 지금은 today page navigate. 후속에는 YT 링크 또는 카드 deep link.
-  const handleNodeClick = (n) => {
-    if (setPage) setPage("today");
-  };
 
   return (
-    <div className="provenance-graph-wrap my-3">
-      {/* Header — 분광 정체성 */}
-      <div className="flex items-center gap-2 mb-2 mono text-[10.5px] uppercase tracking-[0.16em] text-[color:var(--ink-mid)]">
-        <span className="font-semibold text-[color:var(--ink)]">★ Origin</span>
+    <div className="provenance-fan-wrap my-3">
+      {/* Spec dot row — 4 매체 visual hierarchy */}
+      <div className="flex items-center gap-2 mb-3 mono text-[10.5px] uppercase tracking-[0.16em] text-[color:var(--ink-mid)]">
+        <span>같은 사실</span>
         <span className="flex-1 border-t hairline"></span>
-        <span>5매체 분광 + 댓글 cluster</span>
+        <span className="flex items-center gap-1">
+          {items.map((it, i) => (
+            <span key={i} className="inline-block w-2 h-2 rounded-full" style={{ background: `var(--spec-${it.kind})` }}></span>
+          ))}
+        </span>
+        <span>4매체 분광</span>
       </div>
 
-      {/* Mixed layer: SVG edges (behind) + HTML thumbnail cards (above) */}
-      <div style={{ position: "relative", width: "100%", aspectRatio: "720 / 540" }}>
-        {/* SVG edges */}
-        <svg
-          viewBox="0 0 720 540"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", pointerEvents: "none" }}
-        >
-          <defs>
-            <linearGradient id="g-reception-h" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0%" stopColor="rgba(232, 130, 93, 0.16)" />
-              <stop offset="50%" stopColor="rgba(178, 111, 140, 0.16)" />
-              <stop offset="100%" stopColor="rgba(107, 122, 161, 0.16)" />
-            </linearGradient>
-          </defs>
-
-          {/* Reception band */}
-          <rect x="40" y="490" width="640" height="40" rx="14" fill="url(#g-reception-h)" stroke="var(--rule)" strokeWidth="1" strokeDasharray="3 3" />
-          <text x="56" y="508" fontFamily="Pretendard" fontSize="10.5" fontWeight="700" fill="var(--ink-soft)" letterSpacing="0.06em">
-            댓글 cluster (33개 수집)
-          </text>
-          <text x="56" y="522" fontFamily="Pretendard" fontSize="10.5" fontWeight="500" fill="var(--ink-soft)">
-            양향자 비판 · 추미애 비판 · 제3당 호소 (조응천)
-          </text>
-
-          {/* Edges (curved bezier between card centers) */}
-          <g fill="none">
-            {edges.map((e, i) => {
-              const f = nodeMap[e.from];
-              const t = nodeMap[e.to];
-              const highlighted = !hoveredId || e.from === hoveredId || e.to === hoveredId;
-              const strokeColor = e.type === "originates"
-                ? "var(--spec-canonical)"
-                : e.type === "amplifies"
-                  ? "var(--spec-direct)"
-                  : e.type === "cites"
-                    ? "var(--spec-transformed)"
-                    : "var(--spec-partial)";
-              const dasharray = e.type === "amplifies" ? "5 4" : e.type === "cites" || e.type === "phrase_overlap" ? "3 4" : "0";
-              return (
-                <path
-                  key={i}
-                  d={curvedPath(f.x, f.y, t.x, t.y, e.curve)}
-                  stroke={strokeColor}
-                  strokeWidth={e.weight}
-                  strokeDasharray={dasharray}
-                  strokeLinecap="round"
-                  opacity={highlighted ? 0.55 : 0.15}
-                  style={{ transition: "opacity 0.25s" }}
-                />
-              );
-            })}
-          </g>
-        </svg>
-
-        {/* Origin card — special star design */}
-        <button
-          onClick={() => handleNodeClick(origin)}
-          onMouseEnter={() => setHoveredId("origin")}
-          onMouseLeave={() => setHoveredId(null)}
-          style={{
-            position: "absolute",
-            left: `${(origin.x - origin.w / 2) / 720 * 100}%`,
-            top: `${(origin.y - origin.h / 2) / 540 * 100}%`,
-            width: `${origin.w / 720 * 100}%`,
-            height: `${origin.h / 540 * 100}%`,
-            background: "linear-gradient(135deg, #6B7AA1 0%, #4A5779 60%, #2F3A55 100%)",
-            border: "2px solid var(--spec-canonical)",
-            borderRadius: "16px",
-            boxShadow: "0 6px 22px rgba(74, 87, 121, 0.25), 0 2px 8px rgba(74, 87, 121, 0.12)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "white",
-            cursor: "pointer",
-            opacity: isHighlighted("origin") ? 1 : 0.55,
-            transition: "opacity 0.25s, transform 0.2s, box-shadow 0.25s",
-            padding: "10px 12px",
-            textAlign: "center",
-            fontFamily: "Pretendard, sans-serif",
-            zIndex: 2,
-          }}
-          onFocus={(e) => e.currentTarget.style.outline = "none"}
-        >
-          <div style={{ fontSize: "20px", marginBottom: 4, filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.3))" }}>★</div>
-          <div style={{ fontSize: "13px", fontWeight: 800, lineHeight: 1.25, letterSpacing: "-0.01em" }}>
-            {origin.label}
-          </div>
-          <div style={{ fontSize: "10.5px", fontWeight: 500, color: "rgba(255,255,255,0.82)", marginTop: 4 }}>
-            {origin.sub}
-          </div>
-          <div style={{
-            fontFamily: "JetBrains Mono, monospace",
-            fontSize: "9px",
-            letterSpacing: "0.12em",
-            color: "rgba(255,255,255,0.92)",
-            marginTop: 6,
-            padding: "2px 8px",
-            border: "1px solid rgba(255,255,255,0.35)",
-            borderRadius: "100px",
-          }}>
-            ORIGIN · {origin.time}
-          </div>
-        </button>
-
-        {/* YouTube thumbnail cards */}
-        {nodes.map((n) => {
-          const opacity = isHighlighted(n.id) ? 1 : 0.55;
+      {/* 3D fan deck */}
+      <div
+        className="provenance-fan-cards"
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(4, 1fr)",
+          gap: "10px",
+          perspective: "1600px",
+        }}
+      >
+        {items.map((it, i) => {
+          // Subtle rotation cascading — fan effect
+          const rotations = [-3, -1, 1, 3];
+          const yOffsets = [0, -8, 0, -8];
           return (
-            <button
-              key={n.id}
-              onClick={() => handleNodeClick(n)}
-              onMouseEnter={() => setHoveredId(n.id)}
-              onMouseLeave={() => setHoveredId(null)}
+            <div
+              key={i}
+              className="prov-fan-card"
               style={{
-                position: "absolute",
-                left: `${(n.x - n.w / 2) / 720 * 100}%`,
-                top: `${(n.y - n.h / 2) / 540 * 100}%`,
-                width: `${n.w / 720 * 100}%`,
-                height: `${n.h / 540 * 100}%`,
                 background: "white",
-                border: `${n.featured ? 2 : 1}px solid var(--spec-${n.spec})`,
-                borderRadius: "12px",
-                boxShadow: n.featured
-                  ? "0 8px 24px rgba(80, 60, 40, 0.18), 0 2px 8px rgba(80, 60, 40, 0.08)"
-                  : "0 4px 14px rgba(80, 60, 40, 0.12), 0 1px 4px rgba(80, 60, 40, 0.06)",
-                cursor: "pointer",
+                borderRadius: "14px",
                 overflow: "hidden",
+                boxShadow: "var(--card-shadow)",
+                transform: `rotateY(${rotations[i]}deg) translateY(${yOffsets[i]}px)`,
+                transformOrigin: "center bottom",
+                transition: "transform 0.35s cubic-bezier(0.22, 0.8, 0.25, 1), box-shadow 0.25s",
+                cursor: "pointer",
                 display: "flex",
                 flexDirection: "column",
-                opacity,
-                transition: "opacity 0.25s, transform 0.18s, box-shadow 0.25s",
-                fontFamily: "Pretendard, sans-serif",
-                padding: 0,
-                textAlign: "left",
-                zIndex: hoveredId === n.id ? 3 : 2,
-              }}
-              onMouseDown={(e) => e.currentTarget.style.transform = "scale(0.985)"}
-              onMouseUp={(e) => e.currentTarget.style.transform = "scale(1)"}
-            >
-              {/* Thumbnail area */}
-              <div style={{
                 position: "relative",
-                background: n.thumbColor,
-                aspectRatio: "16 / 9",
-                flexShrink: 0,
-                width: "100%",
-              }}>
-                {/* Play button overlay */}
-                <div style={{
-                  position: "absolute",
-                  top: "50%", left: "50%",
-                  transform: "translate(-50%, -50%)",
-                  width: "30px", height: "30px",
-                  borderRadius: "50%",
-                  background: "rgba(255,255,255,0.95)",
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  fontSize: "11px", color: "#000", paddingLeft: "2px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.18)",
-                }}>
-                  ▶
+                borderTop: `3px solid var(--spec-${it.kind})`,
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = `rotateY(0deg) translateY(-14px) scale(1.04)`;
+                e.currentTarget.style.boxShadow = "var(--card-shadow-active)";
+                e.currentTarget.style.zIndex = 5;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = `rotateY(${rotations[i]}deg) translateY(${yOffsets[i]}px)`;
+                e.currentTarget.style.boxShadow = "var(--card-shadow)";
+                e.currentTarget.style.zIndex = "auto";
+              }}
+            >
+              {/* Thumbnail — YouTube style (Jack 명시적 선호) */}
+              <div
+                style={{
+                  background: it.bgGradient,
+                  aspectRatio: "16 / 11",
+                  position: "relative",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  flexShrink: 0,
+                }}
+              >
+                {/* Play icon overlay (YouTube only) */}
+                {it.isYouTube && (
+                  <div
+                    style={{
+                      position: "absolute",
+                      top: "50%",
+                      left: "50%",
+                      transform: "translate(-50%, -50%)",
+                      width: "32px",
+                      height: "32px",
+                      borderRadius: "50%",
+                      background: "rgba(255,255,255,0.92)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "12px",
+                      color: "#000",
+                      paddingLeft: "3px",
+                      boxShadow: "0 2px 8px rgba(0,0,0,0.15)",
+                    }}
+                  >
+                    ▶
+                  </div>
+                )}
+                {/* Org icon top-left */}
+                <span
+                  style={{
+                    position: "absolute",
+                    top: 8,
+                    left: 10,
+                    fontSize: "16px",
+                    filter: "drop-shadow(0 1px 2px rgba(0,0,0,0.25))",
+                  }}
+                >
+                  {it.icon}
+                </span>
+                {/* Org name top-right */}
+                <span
+                  style={{
+                    position: "absolute",
+                    top: 9,
+                    right: 10,
+                    fontSize: "10px",
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    color: "rgba(255,255,255,0.92)",
+                    textShadow: "0 1px 2px rgba(0,0,0,0.4)",
+                  }}
+                >
+                  {it.org}
+                </span>
+                {/* View count bottom-right (YouTube only) */}
+                {it.view && (
+                  <span
+                    style={{
+                      position: "absolute",
+                      bottom: 8,
+                      right: 10,
+                      fontSize: "10px",
+                      fontWeight: 600,
+                      color: "rgba(255,255,255,0.95)",
+                      background: "rgba(0,0,0,0.45)",
+                      padding: "2px 7px",
+                      borderRadius: "100px",
+                      letterSpacing: "0.02em",
+                    }}
+                  >
+                    ▶ {it.view}
+                  </span>
+                )}
+                {/* Big number — center bottom */}
+                <span
+                  style={{
+                    position: "absolute",
+                    bottom: 28,
+                    left: 0,
+                    right: 0,
+                    textAlign: "center",
+                    fontSize: "32px",
+                    fontWeight: 800,
+                    color: "white",
+                    letterSpacing: "-0.02em",
+                    textShadow: "0 2px 8px rgba(0,0,0,0.3)",
+                    lineHeight: 1,
+                  }}
+                >
+                  {it.number}
+                </span>
+              </div>
+
+              {/* Card body */}
+              <div style={{ padding: "10px 12px 12px", flex: 1, display: "flex", flexDirection: "column", gap: 4 }}>
+                <div className="serif font-semibold text-[12.5px] leading-snug" style={{ letterSpacing: "-0.012em", color: "var(--ink)", display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }}>
+                  {it.title}
                 </div>
-                {/* View count chip bottom-right */}
-                <div style={{
-                  position: "absolute",
-                  bottom: 6, right: 6,
-                  fontSize: "9.5px",
-                  fontWeight: 700,
-                  color: "white",
-                  background: "rgba(0,0,0,0.58)",
-                  padding: "2px 6px",
-                  borderRadius: "4px",
-                  fontFamily: "JetBrains Mono, monospace",
-                  letterSpacing: "0.04em",
-                }}>
-                  ▶ {n.view}
+                <div className="mono text-[9.5px] uppercase tracking-[0.12em] text-[color:var(--ink-mid)] mt-auto pt-1 flex items-center gap-1.5 flex-wrap">
+                  <span className="tabular-nums">{it.time}</span>
+                  <span className="text-[color:var(--ink-faint)]">·</span>
+                  <span className={`tabular-nums font-semibold ink-${it.kind}`}>{it.delta}</span>
                 </div>
-                {/* Time chip top-left */}
-                <div style={{
-                  position: "absolute",
-                  top: 6, left: 6,
-                  fontSize: "9px",
-                  fontWeight: 600,
-                  color: "rgba(255,255,255,0.96)",
-                  background: "rgba(0,0,0,0.45)",
-                  padding: "2px 6px",
-                  borderRadius: "4px",
-                  fontFamily: "JetBrains Mono, monospace",
-                  letterSpacing: "0.04em",
-                }}>
-                  {n.time}
+                <div className="text-[10.5px] text-[color:var(--ink-soft)] leading-snug">
+                  {it.orgType}
                 </div>
               </div>
-              {/* Body */}
-              <div style={{
-                padding: "5px 8px 6px",
-                flex: 1,
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-between",
-                minHeight: 0,
-              }}>
-                <div style={{
-                  fontSize: "10px",
-                  fontWeight: 600,
-                  color: "var(--ink)",
-                  lineHeight: 1.25,
-                  letterSpacing: "-0.005em",
-                  display: "-webkit-box",
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: "vertical",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                  marginBottom: 2,
-                }}>
-                  {n.title}
-                </div>
-                <div style={{
-                  fontSize: "9.5px",
-                  color: `var(--spec-${n.spec})`,
-                  fontWeight: 700,
-                  letterSpacing: "0.02em",
-                }}>
-                  {n.channel}
-                </div>
-              </div>
-            </button>
+            </div>
           );
         })}
       </div>
 
-      {/* Legend / cascade narrative */}
-      <div className="flex items-center justify-between gap-3 mt-3 flex-wrap">
-        <div className="flex items-center gap-2.5 flex-wrap text-[10.5px] mono uppercase tracking-[0.12em] text-[color:var(--ink-mid)]">
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-2 h-2 rounded-full" style={{ background: "var(--spec-canonical)" }}></span>
-            Origin
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-2 h-2 rounded-full" style={{ background: "var(--spec-direct)" }}></span>
-            지상파·통신
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-2 h-2 rounded-full" style={{ background: "var(--spec-partial)" }}></span>
-            정치 유튜브
-          </span>
-          <span className="flex items-center gap-1.5">
-            <span className="inline-block w-2 h-2 rounded-full" style={{ background: "var(--spec-transformed)" }}></span>
-            재유통
-          </span>
-        </div>
-        <span className="mono text-[10px] tabular-nums text-[color:var(--ink-faint)] tracking-[0.08em]">
-          7개 영상 · 10+ 매체 · 33 댓글 · 24h
-        </span>
-      </div>
+      {/* Caption — frame shift cascade */}
+      <p className="serif text-[12.5px] text-[color:var(--ink-soft)] mt-4 leading-relaxed">
+        통계청 <span className="ink-canonical font-semibold">35%</span>가 사흘 만에
+        <span className="ink-direct font-semibold"> 38%</span> ·
+        <span className="ink-partial font-semibold"> 50%</span> ·
+        <span className="ink-transformed font-semibold"> 60%</span>로 갈라졌습니다.
+      </p>
     </div>
   );
 }
@@ -2508,18 +2373,15 @@ function HeroCard({ setPage }) {
         지금 <strong className="text-[color:var(--ink)] font-bold mx-1">{TRACKING_TOTAL}개</strong> 따라가는 중. 가장 오래된 건 <strong className="text-[color:var(--ink)] font-bold mx-1">{TRACKING_OLDEST}일째</strong>예요.
       </div>
 
-      {/* Hero lede — 양향자 trend storyline (실데이터) */}
-      <h1 className="headline-display text-[26px] md:text-[32px] mb-2 leading-[1.18]">
-        오늘은 <span style={{ background: "linear-gradient(180deg, transparent 65%, rgba(232,130,93,0.22) 65%)", padding: "0 2px" }}>양향자-추미애 경기지사 맞대결</span>이 24시간 안에 5매체로 펼쳐졌어요.
+      {/* Hero lede — frame shift voice ("따라가요") */}
+      <h1 className="headline-display text-[26px] md:text-[32px] mb-6 leading-[1.18]">
+        오늘은 <span style={{ background: "linear-gradient(180deg, transparent 65%, rgba(159,18,57,0.15) 65%)", padding: "0 2px" }}>청년 무주택 통계가 네 갈래로</span> 흘러갔어요.
       </h1>
-      <p className="text-[12px] mono uppercase tracking-[0.12em] text-[color:var(--ink-mid)] mb-5">
-        Trend № 01 · 5/2 KST · 8 video · 10+ 매체 · 단일 최대 28K view
-      </p>
 
-      {/* Spread hero — provenance graph (실데이터 양향자 trend) */}
-      <SpreadHero setPage={setPage} />
+      {/* Spread hero — YouTube 썸네일 + 3D fan deck (Jack 5/8 feedback) */}
+      <SpreadHero />
 
-      {/* Sub-lede — 매체별 의미 명시 + 분광 적용 */}
+      {/* Sub-lede — 매체별 의미 명시 (Jack 5/8 feedback) */}
       <p className="serif text-[14px] leading-relaxed text-[color:var(--ink-soft)] mt-6 mb-6 pl-4 relative border-l-2 border-canonical">
         PRISM은 같은 사실에 대해 다양한 매체 — 언론사·정치 유튜브 채널·정치인 공식 채널 — 가 어떻게 다른 각도로 다루는지를 매일 보여드려요.
         발언을 분류하지 않고, 매체와 출처를 그대로 보여드립니다.
@@ -2610,13 +2472,7 @@ function TrendCard({ card, onCorrect }) {
         <AmplificationBar share={dominant} unverifiablePct={card.stats.unverifiablePct} />
       )}
 
-      {/* v4: 매체 3시각 비교 (PRD-v4-core §4.7). Amplification 직후 prominent 위치 (Jack 5/8 feedback).
-          라벨 X, 매체명 + framing 병치만. 5/8 결정 옵션 3 채택. */}
-      {MEDIA_SPECTRUM_BY_CARD[card.id] && (
-        <MediaSpectrum items={MEDIA_SPECTRUM_BY_CARD[card.id]} />
-      )}
-
-      {/* Card Spread — 5탭 (FLOW · SPREAD · TRACE · REACT · GRAPH) */}
+      {/* Card Spread — sub-carousel with all figures equal-status */}
       <CardSpread card={card} />
 
       {/* Canonical sources */}
@@ -2638,6 +2494,11 @@ function TrendCard({ card, onCorrect }) {
           </div>
         )}
       </div>
+
+      {/* v4: 매체 3시각 비교 (PRD-v4-core §4.7). 데모에서는 housing card에만 sample data 표시. */}
+      {card.id === "trend-housing-youth" && (
+        <MediaSpectrum items={MEDIA_SPECTRUM_HOUSING} />
+      )}
 
       <ProvenanceFooter />
       <ShareBar katalkLine={card.katalkLine} onCorrect={() => onCorrect(card)} />
@@ -3483,18 +3344,6 @@ const MEDIA_SPECTRUM_HOUSING = [
   { outlet: "한겨레 사회",     framing: "통계청 35% 발표 + 후보 X 50% 발언 병치하며 발언 신빙성 문제 제기." },
   { outlet: "정치 채널 Z",     framing: "후보 X 50% 영상 + '청년 60% 시대' 자체 가공 수치로 확장 보도." },
 ];
-
-// 양향자 trend — 매체별 framing variation (실데이터 REAL.md 기반)
-const MEDIA_SPECTRUM_YANGHYANGJA = [
-  { outlet: "MBC 뉴스데스크",      framing: "\"양향자-추미애 '첫 여성 경기지사' 맞대결\" — 여성 광역단체장 frame 강조 (28K view)." },
-  { outlet: "정치 채널 \"빅매치\"", framing: "\"경기지사 빅매치! 양향자 vs 추미애 격돌!\" — 대결 frame 강조 (10K view)." },
-  { outlet: "미디어워치 심층분석",   framing: "\"국민의힘 양향자, 與 추미애와 경기도지사 '빅매치'\" — 정당 대결 + 분석 frame." },
-];
-
-const MEDIA_SPECTRUM_BY_CARD = {
-  "trend-yang-2026-05-02": MEDIA_SPECTRUM_YANGHYANGJA,
-  "trend-housing-youth": MEDIA_SPECTRUM_HOUSING,
-};
 
 // ============================================================
 // HOME PAGE — 5개 카드 요약 + Hero + 검색
