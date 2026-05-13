@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>PRISM 3D POC — Three.js glass cubes</title>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; overflow: hidden; background: #f7f7fb; font-family: 'Pretendard Variable', 'Pretendard', sans-serif; color: #0B0B12; }
+  #app { position: fixed; inset: 0; }
+  canvas { display: block; }
+  /* Background ambient prism light (from friend v5) */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(40% 30% at 18% 28%, rgba(99,102,241,0.30) 0%, transparent 60%),
+      radial-gradient(36% 26% at 78% 22%, rgba(14,159,110,0.22) 0%, transparent 60%),
+      radial-gradient(34% 28% at 88% 62%, rgba(217,119,6,0.28) 0%, transparent 60%),
+      radial-gradient(38% 30% at 62% 82%, rgba(219,39,119,0.24) 0%, transparent 60%),
+      radial-gradient(40% 32% at 12% 78%, rgba(79,70,229,0.22) 0%, transparent 60%);
+    filter: blur(50px) saturate(150%);
+    opacity: 0.85;
+  }
+  body::after {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background: radial-gradient(100% 80% at 50% 50%, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0.55) 100%);
+  }
+  #app { z-index: 1; }
+  .legend {
+    position: fixed; top: 18px; left: 20px;
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 14px;
+    padding: 12px 16px;
+    box-shadow: 0 8px 24px -10px rgba(80,60,160,0.18);
+    z-index: 10;
+    max-width: 320px;
+  }
+  .legend h3 { font-size: 12px; margin: 0 0 8px; font-weight: 800; letter-spacing: -0.005em; }
+  .legend p { font-size: 11px; margin: 0 0 4px; color: #595869; line-height: 1.5; }
+  .legend .row { display: flex; align-items: center; gap: 8px; font-size: 10.5px; padding: 2px 0; }
+  .legend .swatch { width: 10px; height: 10px; border-radius: 3px; }
+  .info {
+    position: fixed; bottom: 18px; right: 20px;
+    background: rgba(255,255,255,0.72);
+    backdrop-filter: blur(14px) saturate(140%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 14px;
+    padding: 10px 14px;
+    z-index: 10;
+    font-size: 10.5px;
+    color: #595869;
+  }
+  .info strong { color: #0B0B12; }
+  .title {
+    position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(14px) saturate(140%);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.7);
+    z-index: 10;
+    letter-spacing: -0.005em;
+  }
+</style>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<div class="title">PRISM 3D POC · WebGL glass cubes (Three.js)</div>
+
+<div class="legend">
+  <h3>양향자-추미애 경기지사 맞대결 · 24h · 5매체 분광</h3>
+  <p style="margin-bottom: 8px;"><strong>중앙 큐브</strong> = origin (국민의힘 후보 선출 · 5/2 KST)</p>
+  <div style="font-size:10.5px;font-weight:700;margin:6px 0 3px;color:#0B0B12;">분광 색 = spec type</div>
+  <div class="row"><div class="swatch" style="background:#4F46E5;"></div>canonical · 1차 출처</div>
+  <div class="row"><div class="swatch" style="background:#0E9F6E;"></div>direct · 직접 인용</div>
+  <div class="row"><div class="swatch" style="background:#D97706;"></div>partial · 부분 인용</div>
+  <div class="row"><div class="swatch" style="background:#DB2777;"></div>transformed · 2차 가공</div>
+  <div style="font-size:10.5px;font-weight:700;margin:8px 0 3px;color:#0B0B12;">데이터 binding</div>
+  <p style="font-size:10px;line-height:1.55;">▸ <strong>큐브 크기</strong> = 조회수 (MBC 28K 최대)<br>▸ <strong>엣지 굵기</strong> = amplification 강도<br>▸ <strong>엣지의 흐르는 빛</strong> = origin → outlet 정보 흐름 (white → spec color 분광)</p>
+</div>
+
+<div class="info">
+  마우스 <strong>드래그</strong>로 회전 · 휠로 <strong>줌</strong> · 5초 후 자동 회전 시작
+</div>
+
+<div id="app"></div>
+
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+
+// ============================
+// Mock data — same as v8
+// ============================
+const SPEC = {
+  canonical:   '#4F46E5',
+  direct:      '#0E9F6E',
+  partial:     '#D97706',
+  transformed: '#DB2777',
+};
+
+// 5 outlet nodes (matching v8 SpreadHero data)
+const OUTLETS = [
+  { id: 'mbc',    name: 'MBC 뉴스데스크',     view: 28805, spec: 'direct',      angle: 0.45 * Math.PI },
+  { id: 'bm',     name: '정치 채널 빅매치',   view: 25000, spec: 'partial',     angle: 0.05 * Math.PI },
+  { id: 'shorts', name: 'shorts 재유통',       view: 13200, spec: 'transformed', angle: -0.55 * Math.PI },
+  { id: 'yh',     name: '연합뉴스TV [뉴스쏙]', view: 3540,  spec: 'direct',      angle: 0.95 * Math.PI },
+  { id: 'kbs',    name: 'KBS 뉴스7',           view: 2938,  spec: 'direct',      angle: -1.15 * Math.PI },
+];
+
+// ============================
+// Scene setup
+// ============================
+const scene = new THREE.Scene();
+scene.background = null;
+
+const camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 100);
+camera.position.set(0, 4.0, 10.2);
+camera.lookAt(0, 0, 0);
+
+const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 1.15;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+document.getElementById('app').appendChild(renderer.domElement);
+
+// Environment for glass reflection — start with RoomEnvironment fallback
+const pmrem = new THREE.PMREMGenerator(renderer);
+pmrem.compileEquirectangularShader();
+const fallbackEnv = pmrem.fromScene(new RoomEnvironment(), 0.06).texture;
+scene.environment = fallbackEnv;
+
+// Try to load HDR equirectangular for photoreal glass reflection
+const rgbeLoader = new RGBELoader();
+rgbeLoader.load(
+  'https://threejs.org/examples/textures/equirectangular/spruit_sunrise_1k.hdr',
+  (hdrTex) => {
+    const hdrEnv = pmrem.fromEquirectangular(hdrTex).texture;
+    scene.environment = hdrEnv;
+    hdrTex.dispose();
+    console.log('HDR loaded — glass reflection enhanced');
+  },
+  undefined,
+  (err) => {
+    console.warn('HDR fetch failed (likely CORS). Keeping RoomEnvironment fallback.', err);
+  }
+);
+
+// Lights
+const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+scene.add(ambient);
+
+const dirLight = new THREE.DirectionalLight(0xffffff, 1.4);
+dirLight.position.set(4, 8, 6);
+dirLight.castShadow = true;
+dirLight.shadow.mapSize.set(1024, 1024);
+dirLight.shadow.camera.near = 0.1;
+dirLight.shadow.camera.far = 25;
+dirLight.shadow.camera.left = -8;
+dirLight.shadow.camera.right = 8;
+dirLight.shadow.camera.top = 8;
+dirLight.shadow.camera.bottom = -8;
+scene.add(dirLight);
+
+// Soft fill from prism colors (rainbow tinted)
+const spotIndigo = new THREE.PointLight(0x4F46E5, 0.8, 12);
+spotIndigo.position.set(-4, 3, 3);
+scene.add(spotIndigo);
+
+const spotEmerald = new THREE.PointLight(0x0E9F6E, 0.6, 12);
+spotEmerald.position.set(4, 2, 3);
+scene.add(spotEmerald);
+
+const spotMagenta = new THREE.PointLight(0xDB2777, 0.5, 12);
+spotMagenta.position.set(0, 2, -4);
+scene.add(spotMagenta);
+
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+// Ground plane — white floor with subtle shadow
+const groundGeo = new THREE.PlaneGeometry(40, 40);
+const groundMat = new THREE.MeshStandardMaterial({
+  color: 0xffffff,
+  roughness: 0.85,
+  metalness: 0,
+  transparent: true,
+  opacity: 0.55,
+});
+const ground = new THREE.Mesh(groundGeo, groundMat);
+ground.rotation.x = -Math.PI / 2;
+ground.position.y = -1.0;
+ground.receiveShadow = true;
+scene.add(ground);
+
+// ============================
+// CanvasTexture — text overlay (origin only)
+// ============================
+function makeOriginCanvas() {
+  const w = 512, h = 320;
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  // Background — soft white with subtle indigo tint
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, 'rgba(255,255,255,0.96)');
+  grad.addColorStop(1, 'rgba(243,244,255,0.96)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+  // Border (subtle indigo)
+  ctx.strokeStyle = 'rgba(79,70,229,0.35)';
+  ctx.lineWidth = 4;
+  ctx.strokeRect(6, 6, w-12, h-12);
+  // ORIGIN badge
+  ctx.fillStyle = '#4F46E5';
+  ctx.font = 'bold 22px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('★ ORIGIN', w/2, 60);
+  // Main label
+  ctx.fillStyle = '#0B0B12';
+  ctx.font = 'bold 38px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText('국민의힘 후보 선출', w/2, 130);
+  // Subtitle
+  ctx.fillStyle = '#595869';
+  ctx.font = '22px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText('정당 회의 (시스템 외)', w/2, 178);
+  // Time chip
+  ctx.fillStyle = '#4F46E5';
+  ctx.font = 'bold 20px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText('5/2 오전 KST', w/2, 240);
+  // Tracking
+  ctx.fillStyle = '#9B9AAA';
+  ctx.font = '18px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText('5매체 분광 · 33 댓글', w/2, 280);
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+function makeOutletCanvas(channelName, viewText, specLabel, specColor) {
+  const w = 512, h = 288;  // 16:9
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  const ctx = canvas.getContext('2d');
+  // Soft white background with very subtle spec tint
+  const grad = ctx.createLinearGradient(0, 0, w, h);
+  grad.addColorStop(0, 'rgba(255,255,255,0.96)');
+  grad.addColorStop(1, 'rgba(248,248,253,0.96)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, w, h);
+  // Thin spec-color border
+  ctx.strokeStyle = specColor;
+  ctx.lineWidth = 5;
+  ctx.strokeRect(7, 7, w-14, h-14);
+  // Channel name (top)
+  ctx.fillStyle = '#0B0B12';
+  ctx.font = 'bold 32px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.textAlign = 'center';
+  ctx.fillText(channelName, w/2, 70);
+  // View count (center, large, spec color)
+  ctx.fillStyle = specColor;
+  ctx.font = 'bold 76px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText('▶ ' + viewText, w/2, 175);
+  // Spec type label (bottom)
+  ctx.fillStyle = '#595869';
+  ctx.font = '600 22px "Pretendard Variable", "Pretendard", sans-serif';
+  ctx.fillText(specLabel, w/2, 240);
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  return tex;
+}
+
+// ============================
+// Glass cube factory
+// ============================
+function makeGlassMaterial(specColor, emissive = 0.08) {
+  return new THREE.MeshPhysicalMaterial({
+    color: 0xffffff,
+    metalness: 0,
+    roughness: 0.04,
+    transmission: 0.93,
+    thickness: 3.5,
+    ior: 1.52,
+    attenuationColor: new THREE.Color(specColor),
+    attenuationDistance: 1.2,
+    clearcoat: 1.0,
+    clearcoatRoughness: 0.03,
+    reflectivity: 0.5,
+    emissive: new THREE.Color(specColor),
+    emissiveIntensity: emissive,
+    transparent: true,
+    opacity: 0.38,
+    side: THREE.DoubleSide,
+  });
+}
+
+// Truncated 4-sided prism: glass shell with INNER ICE FRAGMENT + INNER content plane.
+function makeCrystal({ size = 1, specColor = '#ffffff', innerTexture = null, emissive = 0.10 }) {
+  const rTop = size * 0.62;
+  const rBottom = size * 0.82;
+  const height = size * 0.88;
+  const geom = new THREE.CylinderGeometry(rTop, rBottom, height, 4, 1, false);
+  geom.rotateY(Math.PI / 4);
+
+  const glassMat = makeGlassMaterial(specColor, emissive);
+  const mesh = new THREE.Mesh(geom, glassMat);
+  mesh.castShadow = true;
+  mesh.receiveShadow = true;
+
+  // INNER content plane — sits at crystal center, always-on-top (depthTest:false)
+  if (innerTexture) {
+    innerTexture.needsUpdate = true;
+    const planeW = size * 0.72;
+    const planeH = planeW * (9 / 16);
+    const planeGeom = new THREE.PlaneGeometry(planeW, planeH);
+    const planeMat = new THREE.MeshBasicMaterial({
+      map: innerTexture,
+      transparent: true,
+      opacity: 1.0,
+      side: THREE.DoubleSide,
+      depthTest: false,
+      depthWrite: false,
+    });
+    const inner = new THREE.Mesh(planeGeom, planeMat);
+    inner.position.set(0, 0, 0);
+    inner.renderOrder = 999;
+    mesh.userData.innerPlane = inner;
+  }
+  return mesh;
+}
+
+// Backwards-compat helper
+function makeGlassCube({ size = 1, specColor = '#ffffff', emissive = 0.2 }) {
+  return makeCrystal({ size, specColor, faceTexture: null, emissive });
+}
+
+// ============================
+// Origin cube (canonical, large, center)
+// ============================
+const originSize = 1.85;
+const originTextTex = makeOriginCanvas();
+const origin = makeCrystal({ size: originSize, specColor: SPEC.canonical, innerTexture: originTextTex, emissive: 0.14 });
+origin.position.set(0, 0, 0);
+scene.add(origin);
+const originInner = origin.userData.innerPlane;
+if (originInner) scene.add(originInner);  // standalone (not child) — synced in animate loop
+
+// Origin as an invisible light source — gentle indigo fill, no visible halo
+const originLight = new THREE.PointLight(0x8b8fd0, 1.4, 7, 1.4);
+originLight.position.set(0, 0.3, 0);
+scene.add(originLight);
+
+// ============================
+// Outlet cubes (5)
+// ============================
+const radius = 3.6;
+const YT_THUMB = {
+  mbc:    'https://i.ytimg.com/vi/MQhr8gX8Hxg/hqdefault.jpg',
+  yh:     'https://i.ytimg.com/vi/6fhctwe2IzU/hqdefault.jpg',
+  kbs:    'https://i.ytimg.com/vi/OEBVgFIgsYc/hqdefault.jpg',
+  shorts: 'https://i.ytimg.com/vi/oF3oiOVkK5k/hqdefault.jpg',
+};
+const textureLoader = new THREE.TextureLoader();
+textureLoader.setCrossOrigin('anonymous');
+
+const outlets = OUTLETS.map((o) => {
+  const sz = 0.55 + Math.log10(o.view / 1000) * 0.32;
+  // Inner plane texture: rich CanvasTexture (channel + view + spec) — reliable visibility
+  const SPEC_LABEL_KO = {
+    direct: '직접 인용',
+    partial: '부분 인용',
+    transformed: '2차 가공',
+    canonical: '1차 출처',
+  };
+  const viewText = (o.view >= 1000) ? (o.view / 1000).toFixed(1) + 'K' : String(o.view);
+  const faceTex = makeOutletCanvas(o.name, viewText, SPEC_LABEL_KO[o.spec] || o.spec, SPEC[o.spec]);
+  const cube = makeCrystal({ size: sz, specColor: SPEC[o.spec], innerTexture: faceTex, emissive: 0.22 });
+  const x = Math.cos(o.angle) * radius;
+  const z = Math.sin(o.angle) * radius;
+  const y = (Math.log10(o.view / 1000) - 1) * 0.18;
+  cube.position.set(x, y, z);
+  scene.add(cube);
+  // Add inner plane to scene as standalone (will be position-synced + lookAt camera in animate loop)
+  const inner = cube.userData.innerPlane;
+  if (inner) scene.add(inner);
+  return { ...o, mesh: cube, inner, size: sz, x, y, z };
+});
+
+// ============================
+// Spectral beams — origin → each outlet
+// ============================
+// ShaderMaterial — moving brightness wave along beam (origin → outlet light flow)
+function makeBeamMaterial(specColor) {
+  return new THREE.ShaderMaterial({
+    transparent: true,
+    blending: THREE.AdditiveBlending,
+    depthWrite: false,
+    uniforms: {
+      uColor:   { value: new THREE.Color(specColor) },
+      uTime:    { value: 0 },
+      uSpeed:   { value: 0.35 },
+    },
+    vertexShader: `
+      varying float vRatio;
+      void main() {
+        // cylinder height=1, position.y in [-0.5, 0.5]
+        // We orient so y axis is along origin→outlet (origin is bottom).
+        vRatio = position.y + 0.5;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `,
+    fragmentShader: `
+      uniform vec3 uColor;
+      uniform float uTime;
+      uniform float uSpeed;
+      varying float vRatio;
+      void main() {
+        // Moving wave traveling from origin (0) to outlet (1)
+        float wave = sin((vRatio - uTime * uSpeed) * 6.2831) * 0.5 + 0.5;
+        wave = pow(wave, 2.2);
+        float intensity = 0.32 + wave * 1.45;
+        // Soft fade at endpoints
+        float fade = smoothstep(0.0, 0.06, vRatio) * smoothstep(0.0, 0.06, 1.0 - vRatio);
+        // Slight white-to-spec gradient: bright near outlet
+        vec3 col = mix(vec3(1.0), uColor, smoothstep(0.0, 0.85, vRatio));
+        gl_FragColor = vec4(col * intensity, fade * 0.85);
+      }
+    `,
+  });
+}
+
+function makeBeam(from, to, specColor, viewNum) {
+  const dir = new THREE.Vector3().subVectors(to, from);
+  const length = dir.length();
+  const widthBase = Math.max(0.06, Math.log10(viewNum / 1000) * 0.055 + 0.07);
+  const geom = new THREE.CylinderGeometry(widthBase * 0.5, widthBase * 0.85, 1, 20, 1, false);
+  const mat = makeBeamMaterial(specColor);
+  const beam = new THREE.Mesh(geom, mat);
+  beam.scale.y = length;
+  const mid = new THREE.Vector3().addVectors(from, to).multiplyScalar(0.5);
+  beam.position.copy(mid);
+  const up = new THREE.Vector3(0, 1, 0);
+  const quat = new THREE.Quaternion().setFromUnitVectors(up, dir.clone().normalize());
+  beam.quaternion.copy(quat);
+  return { mesh: beam, material: mat };
+}
+
+const beams = outlets.map((o) => {
+  const fromCenter = new THREE.Vector3(0, 0, 0);
+  const toCenter = new THREE.Vector3(o.x, o.y, o.z);
+  // Direction from origin to outlet
+  const dir = toCenter.clone().sub(fromCenter).normalize();
+  // Start: origin surface (push along dir by ~origin half-size)
+  const startPoint = fromCenter.clone().addScaledVector(dir, originSize * 0.52);
+  // End: outlet surface (pull back from outlet toward origin)
+  const endPoint = toCenter.clone().addScaledVector(dir, -o.size * 0.52);
+  const { mesh, material } = makeBeam(startPoint, endPoint, SPEC[o.spec], o.view);
+  scene.add(mesh);
+  return { mesh, material };
+});
+
+// ============================
+// (Light packets removed — replaced by Edge ShaderMaterial moving wave)
+// ============================
+
+// ============================
+// HTML overlay labels — project 3D → screen
+// ============================
+const labelLayer = document.createElement('div');
+labelLayer.style.cssText = 'position:fixed; inset:0; pointer-events:none; z-index:5;';
+document.body.appendChild(labelLayer);
+
+function makeLabel(text, viewText) {
+  const el = document.createElement('div');
+  el.style.cssText = `
+    position: absolute;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    color: #0B0B12;
+    transform: translate(-50%, -130%);
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(80,60,160,0.12);
+    letter-spacing: -0.005em;
+  `;
+  el.innerHTML = `${text} <span style="color:#0E9F6E; margin-left:4px;">▶ ${viewText}</span>`;
+  labelLayer.appendChild(el);
+  return el;
+}
+// (Origin label moved INSIDE the glass cube as CanvasTexture plane)
+const outletLabels = outlets.map((o) => makeLabel(o.name, `${(o.view/1000).toFixed(1)}K`));
+
+// Edge midpoint labels — spec type + view (explicit semantic)
+const SPEC_LABEL = { direct: '직접 인용', partial: '부분 인용', transformed: '2차 가공', canonical: '1차' };
+function makeEdgeLabel(specType, viewText, specColor) {
+  const el = document.createElement('div');
+  el.style.cssText = `
+    position: absolute;
+    background: rgba(255,255,255,0.94);
+    border: 1.5px solid ${specColor};
+    border-radius: 100px;
+    padding: 2px 9px;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: ${specColor};
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+    letter-spacing: -0.005em;
+  `;
+  el.innerHTML = `${SPEC_LABEL[specType]} · +${viewText}`;
+  labelLayer.appendChild(el);
+  return el;
+}
+const edgeLabels = outlets.map((o) => makeEdgeLabel(o.spec, `${(o.view/1000).toFixed(1)}K`, SPEC[o.spec]));
+
+function updateLabels() {
+  const w = window.innerWidth, h = window.innerHeight;
+  const proj = (v3) => {
+    const p = v3.clone().project(camera);
+    return { x: (p.x * 0.5 + 0.5) * w, y: (-p.y * 0.5 + 0.5) * h, depth: p.z };
+  };
+  outlets.forEach((o, i) => {
+    const p = proj(new THREE.Vector3(o.x, o.y + o.size * 0.55, o.z));
+    outletLabels[i].style.left = `${p.x}px`;
+    outletLabels[i].style.top  = `${p.y}px`;
+    outletLabels[i].style.opacity = (p.depth > 1 || p.depth < -1) ? '0.3' : '1';
+  });
+  // edge midpoint labels — between origin and outlet, slightly biased toward outlet (60%)
+  outlets.forEach((o, i) => {
+    const mid = new THREE.Vector3(o.x * 0.55, o.y * 0.55 + 0.15, o.z * 0.55);
+    const p = proj(mid);
+    edgeLabels[i].style.left = `${p.x}px`;
+    edgeLabels[i].style.top  = `${p.y}px`;
+    edgeLabels[i].style.opacity = (p.depth > 1 || p.depth < -1) ? '0' : '0.95';
+  });
+}
+
+// ============================
+// Orbit controls + auto rotate
+// ============================
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.target.set(0, 0, 0);
+controls.enableDamping = true;
+controls.dampingFactor = 0.08;
+controls.minDistance = 5;
+controls.maxDistance = 16;
+controls.maxPolarAngle = Math.PI / 2.2; // limit to keep crystal side faces visible
+controls.minPolarAngle = Math.PI / 5;
+controls.autoRotate = false;
+controls.autoRotateSpeed = 0.45;
+
+// Start auto rotate after 5s no interaction
+let lastInteract = Date.now();
+controls.addEventListener('start', () => { lastInteract = Date.now(); controls.autoRotate = false; });
+setInterval(() => {
+  if (Date.now() - lastInteract > 5000) controls.autoRotate = true;
+}, 800);
+
+// ============================
+// Resize + render loop
+// ============================
+function onResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
+window.addEventListener('resize', onResize);
+
+function animate() {
+  requestAnimationFrame(animate);
+  controls.update();
+  const t = performance.now() * 0.001;
+  // subtle origin breathing — position only, no rotation
+  origin.position.y = Math.sin(t * 0.6) * 0.04;
+  originLight.position.set(0, origin.position.y + 0.3, 0);
+  outlets.forEach((o, i) => {
+    o.mesh.position.y = o.y + Math.sin(t * 0.5 + i * 0.7) * 0.025;
+  });
+  // Edge beams — update moving wave uniform
+  beams.forEach((b) => {
+    b.material.uniforms.uTime.value = t;
+  });
+  // INNER planes — sit at crystal center, always face camera (visible through outer glass refraction)
+  const camPos = camera.position;
+  outlets.forEach((o) => {
+    if (o.inner) {
+      o.inner.position.set(o.x, o.mesh.position.y, o.z);
+      o.inner.lookAt(camPos);
+    }
+  });
+  if (originInner) {
+    originInner.position.set(0, origin.position.y, 0);
+    originInner.lookAt(camPos);
+  }
+  updateLabels();
+  renderer.render(scene, camera);
+}
+animate();
+</script>
+</body>
+</html>

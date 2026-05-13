@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>PRISM Layout Sketches — A B C D 비교</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<style>
+  :root {
+    --spec-canonical: #4F46E5;
+    --spec-direct: #0E9F6E;
+    --spec-partial: #D97706;
+    --spec-transformed: #DB2777;
+    --spec-unverifiable: #6B7280;
+    --ink: #0B0B12;
+    --ink-mid: #595869;
+    --ink-faint: #9B9AAA;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
+    background: #FAFAFD;
+    padding: 24px;
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none;
+    background:
+      radial-gradient(40% 30% at 18% 18%, rgba(99,102,241,0.20) 0%, transparent 60%),
+      radial-gradient(36% 26% at 82% 22%, rgba(14,159,110,0.16) 0%, transparent 60%),
+      radial-gradient(34% 28% at 88% 78%, rgba(217,119,6,0.18) 0%, transparent 60%),
+      radial-gradient(38% 30% at 18% 82%, rgba(219,39,119,0.16) 0%, transparent 60%);
+    filter: blur(40px) saturate(140%);
+  }
+  h1 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 4px 0 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1700px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  .panel {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 20px;
+    padding: 20px 22px 24px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 28px -12px rgba(80,60,160,0.18);
+  }
+  .panel-header {
+    margin-bottom: 14px;
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  .panel-tag {
+    font-size: 10px; font-weight: 700;
+    color: white;
+    background: linear-gradient(135deg, var(--spec-canonical), var(--spec-transformed));
+    padding: 3px 8px; border-radius: 100px;
+    letter-spacing: 0.04em;
+  }
+  .panel h2 {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--ink);
+  }
+  .panel .desc {
+    font-size: 11px;
+    color: var(--ink-mid);
+    margin: 4px 0 14px;
+    line-height: 1.5;
+  }
+  .stage {
+    position: relative;
+    height: 440px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.45);
+    overflow: hidden;
+  }
+  .outlet-card {
+    position: absolute;
+    border-radius: 10px;
+    padding: 8px 10px;
+    background: white;
+    font-size: 10px;
+    line-height: 1.3;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 14px -4px rgba(0,0,0,0.12), 0 1px 4px rgba(0,0,0,0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .outlet-card .outlet-name { font-weight: 700; font-size: 10px; }
+  .outlet-card .outlet-view { font-weight: 700; font-size: 12px; color: var(--ink); margin-top: 2px; }
+  .outlet-card .outlet-spec { font-size: 9px; color: var(--ink-mid); margin-top: 1px; letter-spacing: -0.005em; }
+
+  /* ============ Panel A — Layered Glass Constellation ============ */
+  .a-stage {
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.55) 0%, rgba(250,250,253,0.3) 100%);
+  }
+  .a-origin {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 170px;
+    background: linear-gradient(135deg,
+      color-mix(in srgb, var(--spec-canonical) 18%, white) 0%,
+      color-mix(in srgb, var(--spec-canonical) 8%, white) 100%);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid color-mix(in srgb, var(--spec-canonical) 35%, white);
+    border-radius: 14px;
+    padding: 14px 16px;
+    text-align: center;
+    box-shadow:
+      0 8px 28px -10px color-mix(in srgb, var(--spec-canonical) 30%, transparent),
+      inset 0 1px 0 rgba(255,255,255,0.9);
+    z-index: 3;
+  }
+  .a-origin .o-label { font-weight: 800; font-size: 13px; }
+  .a-origin .o-sub { font-size: 10px; color: var(--ink-mid); margin-top: 4px; }
+  .a-origin .o-time {
+    font-size: 9px; margin-top: 8px;
+    padding: 2px 8px; border: 1px solid color-mix(in srgb, var(--spec-canonical) 40%, white);
+    border-radius: 100px; display: inline-block;
+    color: var(--spec-canonical); font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .a-outlet {
+    backdrop-filter: blur(10px) saturate(140%);
+    border: 1.5px solid;
+  }
+  .a-outlet-thumb {
+    width: 100%;
+    border-radius: 6px;
+    height: 36px;
+    margin-bottom: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .a-outlet-thumb::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 18% 12%,
+      color-mix(in srgb, var(--c) 50%, transparent) 0%,
+      transparent 55%),
+      radial-gradient(ellipse at 82% 88%,
+      color-mix(in srgb, var(--c) 30%, transparent) 0%,
+      transparent 60%);
+    mix-blend-mode: screen;
+  }
+  /* Outlets — sized by view */
+  .a-mbc    { left: 56%; top: 8%;  width: 140px; --c: var(--spec-direct);      border-color: var(--spec-direct); box-shadow: 0 12px 36px -10px color-mix(in srgb, var(--spec-direct) 40%, transparent); }
+  .a-bm     { left: 65%; top: 50%; width: 130px; --c: var(--spec-partial);     border-color: var(--spec-partial); box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--spec-partial) 40%, transparent); }
+  .a-shorts { left: 50%; top: 78%; width: 116px; --c: var(--spec-transformed); border-color: var(--spec-transformed); box-shadow: 0 8px 22px -10px color-mix(in srgb, var(--spec-transformed) 38%, transparent); }
+  .a-yh     { left: 12%; top: 12%; width:  96px; --c: var(--spec-direct);      border-color: var(--spec-direct); box-shadow: 0 4px 14px -6px color-mix(in srgb, var(--spec-direct) 25%, transparent); }
+  .a-kbs    { left: 8%;  top: 70%; width:  92px; --c: var(--spec-direct);      border-color: var(--spec-direct); box-shadow: 0 4px 14px -6px color-mix(in srgb, var(--spec-direct) 25%, transparent); }
+  .a-outlet { background: rgba(255,255,255,0.78); }
+  .a-thumb-mbc    { background: linear-gradient(135deg, #2c4658, #4a6b7f); }
+  .a-thumb-bm     { background: linear-gradient(135deg, #8a5e27, #c68a47); }
+  .a-thumb-shorts { background: linear-gradient(135deg, #7a4760, #b26f8c); }
+  .a-thumb-yh     { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+  .a-thumb-kbs    { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+
+  /* ============ Panel B — Depth Stack ============ */
+  .b-stage {
+    background:
+      radial-gradient(circle at 50% 50%, rgba(99,102,241,0.10) 0%, transparent 60%),
+      rgba(255,255,255,0.45);
+    perspective: 800px;
+  }
+  .b-origin {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%) scale(0.92);
+    width: 240px;
+    height: 140px;
+    background: rgba(255,255,255,0.45);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: center;
+    filter: blur(0.6px);
+    opacity: 0.78;
+    z-index: 1;
+    box-shadow: 0 4px 18px -8px rgba(80,60,160,0.16);
+  }
+  .b-origin-label { font-weight: 800; font-size: 13px; color: var(--ink); }
+  .b-origin-sub   { font-size: 10px; color: var(--ink-mid); margin-top: 4px; }
+  .b-origin-time  {
+    font-size: 9px; margin-top: 8px;
+    padding: 2px 8px; border: 1px solid var(--spec-canonical);
+    border-radius: 100px; display: inline-block;
+    color: var(--spec-canonical); font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .b-rays {
+    position: absolute; inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .b-outlet {
+    z-index: 3;
+    border: 1.5px solid;
+    background: white;
+  }
+  .b-outlet-thumb {
+    width: 100%;
+    border-radius: 6px;
+    height: 36px;
+    margin-bottom: 6px;
+  }
+  .b-mbc    { left: 8%;  top: 6%;   width: 130px; border-color: var(--spec-direct);      box-shadow: 0 14px 30px -8px rgba(0,0,0,0.18); }
+  .b-bm     { left: 60%; top: 8%;   width: 128px; border-color: var(--spec-partial);     box-shadow: 0 12px 28px -8px rgba(0,0,0,0.16); }
+  .b-shorts { left: 36%; top: 75%;  width: 118px; border-color: var(--spec-transformed); box-shadow: 0 10px 24px -8px rgba(0,0,0,0.15); }
+  .b-yh     { left: 4%;  top: 72%;  width:  98px; border-color: var(--spec-direct);      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.13); }
+  .b-kbs    { left: 70%; top: 76%;  width:  92px; border-color: var(--spec-direct);      box-shadow: 0 8px 20px -8px rgba(0,0,0,0.13); }
+  .b-thumb-mbc    { background: linear-gradient(135deg, #2c4658, #4a6b7f); }
+  .b-thumb-bm     { background: linear-gradient(135deg, #8a5e27, #c68a47); }
+  .b-thumb-shorts { background: linear-gradient(135deg, #7a4760, #b26f8c); }
+  .b-thumb-yh     { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+  .b-thumb-kbs    { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+
+  /* ============ Panel C — Outlet as spec-color glass cube ============ */
+  .c-stage {
+    background: rgba(255,255,255,0.55);
+  }
+  .c-origin {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px; height: 110px;
+    background: rgba(255,255,255,0.32);
+    backdrop-filter: blur(12px) saturate(160%);
+    border: 1.5px solid rgba(255,255,255,0.85);
+    border-radius: 14px;
+    padding: 12px 10px;
+    text-align: center;
+    box-shadow: 0 6px 22px -10px rgba(80,60,160,0.20), inset 0 1px 0 rgba(255,255,255,0.95);
+    z-index: 3;
+  }
+  .c-origin-label { font-weight: 800; font-size: 11px; }
+  .c-origin-sub   { font-size: 9px; color: var(--ink-mid); margin-top: 3px; }
+  .c-origin-time {
+    font-size: 8.5px; margin-top: 6px;
+    padding: 2px 6px;
+    border: 1px solid var(--spec-canonical);
+    border-radius: 100px; display: inline-block;
+    color: var(--spec-canonical); font-weight: 700;
+  }
+  /* Each outlet card backdrop = spec color glass */
+  .c-outlet {
+    border-radius: 12px;
+    padding: 10px 12px;
+    backdrop-filter: blur(10px) saturate(160%);
+    color: white;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    position: absolute;
+  }
+  .c-outlet .outlet-name { color: rgba(255,255,255,0.95); font-size: 10px; font-weight: 700; }
+  .c-outlet .outlet-view { color: white; font-size: 13px; font-weight: 800; margin-top: 4px; text-shadow: 0 1px 3px rgba(0,0,0,0.2); }
+  .c-outlet .outlet-spec { color: rgba(255,255,255,0.85); font-size: 8.5px; margin-top: 1px; }
+  .c-mbc {
+    left: 56%; top: 8%; width: 140px; height: 84px;
+    background: radial-gradient(ellipse at 25% 20%,
+      color-mix(in srgb, var(--spec-direct) 95%, white) 0%,
+      color-mix(in srgb, var(--spec-direct) 75%, transparent) 60%,
+      color-mix(in srgb, var(--spec-direct) 60%, transparent) 100%);
+    box-shadow: 0 14px 36px -10px color-mix(in srgb, var(--spec-direct) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .c-bm {
+    left: 64%; top: 50%; width: 134px; height: 80px;
+    background: radial-gradient(ellipse at 25% 20%,
+      color-mix(in srgb, var(--spec-partial) 95%, white) 0%,
+      color-mix(in srgb, var(--spec-partial) 75%, transparent) 60%,
+      color-mix(in srgb, var(--spec-partial) 60%, transparent) 100%);
+    box-shadow: 0 12px 32px -10px color-mix(in srgb, var(--spec-partial) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .c-shorts {
+    left: 50%; top: 78%; width: 118px; height: 70px;
+    background: radial-gradient(ellipse at 25% 20%,
+      color-mix(in srgb, var(--spec-transformed) 95%, white) 0%,
+      color-mix(in srgb, var(--spec-transformed) 75%, transparent) 60%,
+      color-mix(in srgb, var(--spec-transformed) 55%, transparent) 100%);
+    box-shadow: 0 10px 28px -10px color-mix(in srgb, var(--spec-transformed) 50%, transparent), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .c-yh {
+    left: 12%; top: 10%; width: 100px; height: 68px;
+    background: radial-gradient(ellipse at 25% 20%,
+      color-mix(in srgb, var(--spec-direct) 90%, white) 0%,
+      color-mix(in srgb, var(--spec-direct) 70%, transparent) 60%,
+      color-mix(in srgb, var(--spec-direct) 55%, transparent) 100%);
+    box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--spec-direct) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+  .c-kbs {
+    left: 7%; top: 72%; width: 96px; height: 66px;
+    background: radial-gradient(ellipse at 25% 20%,
+      color-mix(in srgb, var(--spec-direct) 90%, white) 0%,
+      color-mix(in srgb, var(--spec-direct) 70%, transparent) 60%,
+      color-mix(in srgb, var(--spec-direct) 55%, transparent) 100%);
+    box-shadow: 0 6px 18px -8px color-mix(in srgb, var(--spec-direct) 40%, transparent), inset 0 1px 0 rgba(255,255,255,0.4);
+  }
+
+  /* ============ Panel D — Vertical Light Streams ============ */
+  .d-stage {
+    background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(250,250,253,0.45) 100%);
+  }
+  .d-prism {
+    position: absolute;
+    left: 50%; top: 6%;
+    transform: translateX(-50%);
+    width: 200px;
+  }
+  .d-prism-label {
+    position: absolute;
+    left: 50%; top: 18%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 3;
+  }
+  .d-prism-label-title { font-weight: 800; font-size: 12px; color: var(--ink); }
+  .d-prism-label-sub { font-size: 9px; color: var(--ink-mid); margin-top: 2px; }
+  .d-prism-label-time {
+    font-size: 8.5px; margin-top: 6px;
+    padding: 2px 8px;
+    border: 1px solid var(--spec-canonical);
+    border-radius: 100px; display: inline-block;
+    color: var(--spec-canonical); font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .d-streams {
+    position: absolute;
+    left: 0; right: 0; top: 36%; bottom: 8%;
+    z-index: 1;
+  }
+  .d-outlet-row {
+    position: absolute;
+    bottom: 0;
+    display: flex; flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+  .d-outlet-row .outlet-card {
+    position: static;
+    border-top: 3px solid;
+  }
+  .d-mbc    { left: 7%;  width: 130px; }
+  .d-yh     { left: 27%; width: 100px; }
+  .d-bm     { left: 47%; width: 122px; }
+  .d-kbs    { left: 67%; width: 100px; }
+  .d-shorts { left: 84%; width: 110px; }
+  .d-thumb { width: 90%; height: 28px; border-radius: 4px; }
+  .d-thumb-mbc    { background: linear-gradient(135deg, #2c4658, #4a6b7f); }
+  .d-thumb-bm     { background: linear-gradient(135deg, #8a5e27, #c68a47); }
+  .d-thumb-shorts { background: linear-gradient(135deg, #7a4760, #b26f8c); }
+  .d-thumb-yh     { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+  .d-thumb-kbs    { background: linear-gradient(135deg, #2f4626, #4a6b3f); }
+
+  /* explicit label */
+  .anno {
+    position: absolute;
+    background: rgba(255,255,255,0.92);
+    border-radius: 100px;
+    padding: 2px 8px;
+    font-size: 9px; font-weight: 700;
+    z-index: 5;
+    border: 1px solid;
+    white-space: nowrap;
+    letter-spacing: -0.005em;
+  }
+
+  .footer-note {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 11px;
+    color: var(--ink-mid);
+    position: relative;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+<h1>PRISM Hero Layout Sketches · A B C D 비교 (2026-05-13)</h1>
+<div class="grid">
+
+  <!-- Panel A -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-tag">A</span>
+      <h2>Layered Glass Constellation</h2>
+    </div>
+    <div class="desc">Origin glass card 중심 · outlet 5개 방사 + 데이터 비례 scale · spectral beam (origin → outlet) · 일부 overlap으로 depth.</div>
+    <div class="stage a-stage">
+      <!-- SVG beams behind cards -->
+      <svg viewBox="0 0 720 440" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;">
+        <defs>
+          <linearGradient id="a-beam-mbc" x1="360" y1="220" x2="540" y2="60" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="var(--spec-direct)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-direct)" stop-opacity="0.95"/>
+          </linearGradient>
+          <linearGradient id="a-beam-bm" x1="360" y1="220" x2="600" y2="240" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="var(--spec-partial)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-partial)" stop-opacity="0.95"/>
+          </linearGradient>
+          <linearGradient id="a-beam-shorts" x1="360" y1="220" x2="420" y2="390" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="var(--spec-transformed)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-transformed)" stop-opacity="0.92"/>
+          </linearGradient>
+          <linearGradient id="a-beam-yh" x1="360" y1="220" x2="160" y2="80" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="var(--spec-direct)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-direct)" stop-opacity="0.75"/>
+          </linearGradient>
+          <linearGradient id="a-beam-kbs" x1="360" y1="220" x2="120" y2="350" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="var(--spec-direct)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-direct)" stop-opacity="0.7"/>
+          </linearGradient>
+        </defs>
+        <line x1="360" y1="220" x2="540" y2="60"  stroke="url(#a-beam-mbc)"    stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="360" y1="220" x2="600" y2="240" stroke="url(#a-beam-bm)"     stroke-width="4.2" stroke-linecap="round"/>
+        <line x1="360" y1="220" x2="420" y2="390" stroke="url(#a-beam-shorts)" stroke-width="3.4" stroke-linecap="round" stroke-dasharray="6 5"/>
+        <line x1="360" y1="220" x2="160" y2="80"  stroke="url(#a-beam-yh)"     stroke-width="2.4" stroke-linecap="round"/>
+        <line x1="360" y1="220" x2="120" y2="350" stroke="url(#a-beam-kbs)"    stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div class="a-origin">
+        <div class="o-label">국민의힘 후보 선출</div>
+        <div class="o-sub">정당 회의 (시스템 외)</div>
+        <div class="o-time">ORIGIN · 5/2 AM</div>
+      </div>
+      <div class="outlet-card a-outlet a-mbc">
+        <div class="a-outlet-thumb a-thumb-mbc"></div>
+        <div class="outlet-name">MBC 뉴스데스크</div>
+        <div class="outlet-view">▶ 28K</div>
+        <div class="outlet-spec">직접 인용 · 5/2 20:18</div>
+      </div>
+      <div class="outlet-card a-outlet a-bm">
+        <div class="a-outlet-thumb a-thumb-bm"></div>
+        <div class="outlet-name">정치 채널 빅매치</div>
+        <div class="outlet-view">▶ 25K</div>
+        <div class="outlet-spec">부분 인용 · 5/2 22:50</div>
+      </div>
+      <div class="outlet-card a-outlet a-shorts">
+        <div class="a-outlet-thumb a-thumb-shorts"></div>
+        <div class="outlet-name">shorts 재유통</div>
+        <div class="outlet-view">▶ 13K</div>
+        <div class="outlet-spec">2차 가공 · 5/3 10:00</div>
+      </div>
+      <div class="outlet-card a-outlet a-yh">
+        <div class="a-outlet-thumb a-thumb-yh"></div>
+        <div class="outlet-name">연합뉴스TV</div>
+        <div class="outlet-view">▶ 3.5K</div>
+        <div class="outlet-spec">직접 인용</div>
+      </div>
+      <div class="outlet-card a-outlet a-kbs">
+        <div class="a-outlet-thumb a-thumb-kbs"></div>
+        <div class="outlet-name">KBS 뉴스7</div>
+        <div class="outlet-view">▶ 2.9K</div>
+        <div class="outlet-spec">직접 인용</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel B -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-tag">B</span>
+      <h2>Depth Stack (origin 뒤, outlet 앞)</h2>
+    </div>
+    <div class="desc">Origin이 z-0으로 약간 blur. Outlet이 z-1로 sharp + drop-shadow. 빛이 origin 뒤에서 outlet 앞으로 통과하는 정서. 깊이감 가장 강함.</div>
+    <div class="stage b-stage">
+      <svg class="b-rays" viewBox="0 0 720 440" preserveAspectRatio="none">
+        <defs>
+          <radialGradient id="b-ray" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(255,255,255,0.85)"/>
+            <stop offset="50%" stop-color="rgba(255,255,255,0.35)"/>
+            <stop offset="100%" stop-color="rgba(255,255,255,0)"/>
+          </radialGradient>
+        </defs>
+        <!-- soft halo behind origin -->
+        <ellipse cx="360" cy="220" rx="220" ry="120" fill="url(#b-ray)"/>
+        <!-- spectral rays radiating out from origin (visible because outlet cards are in front) -->
+        <line x1="360" y1="220" x2="90"  y2="56"  stroke="var(--spec-direct)"      stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="360" y1="220" x2="610" y2="64"  stroke="var(--spec-partial)"     stroke-width="3.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="360" y1="220" x2="380" y2="400" stroke="var(--spec-transformed)" stroke-width="3.0" stroke-linecap="round" opacity="0.5" stroke-dasharray="6 5"/>
+        <line x1="360" y1="220" x2="80"  y2="380" stroke="var(--spec-direct)"      stroke-width="2.2" stroke-linecap="round" opacity="0.4"/>
+        <line x1="360" y1="220" x2="640" y2="396" stroke="var(--spec-direct)"      stroke-width="2.2" stroke-linecap="round" opacity="0.4"/>
+      </svg>
+      <div class="b-origin">
+        <div class="b-origin-label">국민의힘 후보 선출</div>
+        <div class="b-origin-sub">정당 회의 (시스템 외)</div>
+        <div class="b-origin-time">ORIGIN · 5/2 AM</div>
+      </div>
+      <div class="outlet-card b-outlet b-mbc">
+        <div class="b-outlet-thumb b-thumb-mbc"></div>
+        <div class="outlet-name">MBC 뉴스데스크</div>
+        <div class="outlet-view">▶ 28K</div>
+        <div class="outlet-spec">직접 인용</div>
+      </div>
+      <div class="outlet-card b-outlet b-bm">
+        <div class="b-outlet-thumb b-thumb-bm"></div>
+        <div class="outlet-name">정치 채널 빅매치</div>
+        <div class="outlet-view">▶ 25K</div>
+        <div class="outlet-spec">부분 인용</div>
+      </div>
+      <div class="outlet-card b-outlet b-shorts">
+        <div class="b-outlet-thumb b-thumb-shorts"></div>
+        <div class="outlet-name">shorts 재유통</div>
+        <div class="outlet-view">▶ 13K</div>
+        <div class="outlet-spec">2차 가공</div>
+      </div>
+      <div class="outlet-card b-outlet b-yh">
+        <div class="b-outlet-thumb b-thumb-yh"></div>
+        <div class="outlet-name">연합뉴스TV</div>
+        <div class="outlet-view">▶ 3.5K</div>
+        <div class="outlet-spec">직접</div>
+      </div>
+      <div class="outlet-card b-outlet b-kbs">
+        <div class="b-outlet-thumb b-thumb-kbs"></div>
+        <div class="outlet-name">KBS 뉴스7</div>
+        <div class="outlet-view">▶ 2.9K</div>
+        <div class="outlet-spec">직접</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel C -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-tag">C</span>
+      <h2>Outlet 자체가 spec color glass cube</h2>
+    </div>
+    <div class="desc">Origin은 투명 glass. 각 outlet 카드 backdrop이 spec color radial gradient. 카드가 색깔 cube로 보임. Image #4의 직역에 가장 가까움.</div>
+    <div class="stage c-stage">
+      <svg viewBox="0 0 720 440" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;">
+        <line x1="360" y1="220" x2="540" y2="60"  stroke="var(--spec-direct)"      stroke-width="3.5" stroke-linecap="round" opacity="0.55"/>
+        <line x1="360" y1="220" x2="600" y2="240" stroke="var(--spec-partial)"     stroke-width="3.2" stroke-linecap="round" opacity="0.55"/>
+        <line x1="360" y1="220" x2="420" y2="390" stroke="var(--spec-transformed)" stroke-width="2.6" stroke-linecap="round" opacity="0.5" stroke-dasharray="5 4"/>
+        <line x1="360" y1="220" x2="160" y2="80"  stroke="var(--spec-direct)"      stroke-width="2.0" stroke-linecap="round" opacity="0.45"/>
+        <line x1="360" y1="220" x2="120" y2="350" stroke="var(--spec-direct)"      stroke-width="1.8" stroke-linecap="round" opacity="0.45"/>
+      </svg>
+      <div class="c-origin">
+        <div class="c-origin-label">국민의힘 후보 선출</div>
+        <div class="c-origin-sub">정당 회의 외</div>
+        <div class="c-origin-time">5/2 AM</div>
+      </div>
+      <div class="c-outlet c-mbc">
+        <div class="outlet-name">MBC 뉴스데스크</div>
+        <div class="outlet-view">▶ 28K</div>
+        <div class="outlet-spec">직접 인용 · 5/2 20:18</div>
+      </div>
+      <div class="c-outlet c-bm">
+        <div class="outlet-name">정치 채널 빅매치</div>
+        <div class="outlet-view">▶ 25K</div>
+        <div class="outlet-spec">부분 인용</div>
+      </div>
+      <div class="c-outlet c-shorts">
+        <div class="outlet-name">shorts 재유통</div>
+        <div class="outlet-view">▶ 13K</div>
+        <div class="outlet-spec">2차 가공</div>
+      </div>
+      <div class="c-outlet c-yh">
+        <div class="outlet-name">연합뉴스TV</div>
+        <div class="outlet-view">▶ 3.5K</div>
+        <div class="outlet-spec">직접</div>
+      </div>
+      <div class="c-outlet c-kbs">
+        <div class="outlet-name">KBS 뉴스7</div>
+        <div class="outlet-view">▶ 2.9K</div>
+        <div class="outlet-spec">직접</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Panel D -->
+  <div class="panel">
+    <div class="panel-header">
+      <span class="panel-tag">D</span>
+      <h2>Vertical Light Streams</h2>
+    </div>
+    <div class="desc">상단 prism polygon (친구 SpectrumHero 스타일) → 5색 dispersion ray가 아래로 직진 → 각 ray 끝에 outlet card anchor. 친구 base를 가장 직접 활용.</div>
+    <div class="stage d-stage">
+      <!-- top prism SVG -->
+      <svg viewBox="0 0 200 110" preserveAspectRatio="xMidYMid meet" style="position:absolute; left:50%; top:4%; transform: translateX(-50%); width:220px; z-index:2;">
+        <defs>
+          <linearGradient id="d-prism-front" x1="0.2" y1="0" x2="0.7" y2="1">
+            <stop offset="0%"  stop-color="rgba(255,255,255,0.95)"/>
+            <stop offset="22%" stop-color="rgba(255,255,255,0.45)"/>
+            <stop offset="55%" stop-color="rgba(24,24,27,0.04)"/>
+            <stop offset="100%" stop-color="rgba(24,24,27,0.16)"/>
+          </linearGradient>
+          <linearGradient id="d-prism-inner" x1="0" y1="0" x2="0.8" y2="1">
+            <stop offset="0%"   stop-color="rgba(49,46,129,0.10)"/>
+            <stop offset="50%"  stop-color="rgba(180,83,9,0.06)"/>
+            <stop offset="100%" stop-color="rgba(159,18,57,0.10)"/>
+          </linearGradient>
+        </defs>
+        <polygon points="100,12 160,98 40,98" fill="url(#d-prism-inner)"/>
+        <polygon points="100,12 160,98 40,98" fill="url(#d-prism-front)"/>
+        <polygon points="100,12 160,98 40,98" fill="none" stroke="#0B0B12" stroke-width="1.4"/>
+        <line x1="100" y1="12" x2="40" y2="98" stroke="rgba(255,255,255,0.85)" stroke-width="0.7"/>
+      </svg>
+      <!-- dispersion rays going down -->
+      <svg viewBox="0 0 720 440" preserveAspectRatio="none" style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none; z-index:1;">
+        <defs>
+          <linearGradient id="d-ray-direct" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="var(--spec-direct)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-direct)" stop-opacity="0.85"/>
+          </linearGradient>
+          <linearGradient id="d-ray-partial" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="var(--spec-partial)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-partial)" stop-opacity="0.85"/>
+          </linearGradient>
+          <linearGradient id="d-ray-transformed" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"  stop-color="var(--spec-transformed)" stop-opacity="0.05"/>
+            <stop offset="100%" stop-color="var(--spec-transformed)" stop-opacity="0.85"/>
+          </linearGradient>
+        </defs>
+        <line x1="360" y1="118" x2="105" y2="380" stroke="url(#d-ray-direct)"      stroke-width="5"   stroke-linecap="round"/>
+        <line x1="360" y1="118" x2="235" y2="380" stroke="url(#d-ray-direct)"      stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="360" y1="118" x2="382" y2="380" stroke="url(#d-ray-partial)"     stroke-width="4.5" stroke-linecap="round"/>
+        <line x1="360" y1="118" x2="520" y2="380" stroke="url(#d-ray-direct)"      stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+        <line x1="360" y1="118" x2="640" y2="380" stroke="url(#d-ray-transformed)" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="6 5"/>
+      </svg>
+      <div class="d-prism-label">
+        <div class="d-prism-label-title">국민의힘 후보 선출</div>
+        <div class="d-prism-label-sub">정당 회의 외 · 양향자</div>
+        <div class="d-prism-label-time">ORIGIN · 5/2 AM</div>
+      </div>
+      <!-- outlet cards anchored to bottom of rays -->
+      <div class="d-outlet-row d-mbc" style="bottom: 14px;">
+        <div class="outlet-card" style="border-top: 3px solid var(--spec-direct); width: 100%;">
+          <div class="d-thumb d-thumb-mbc"></div>
+          <div class="outlet-name" style="margin-top:4px;">MBC 뉴스데스크</div>
+          <div class="outlet-view">▶ 28K</div>
+          <div class="outlet-spec">직접 인용</div>
+        </div>
+      </div>
+      <div class="d-outlet-row d-yh" style="bottom: 14px;">
+        <div class="outlet-card" style="border-top: 3px solid var(--spec-direct); width: 100%;">
+          <div class="d-thumb d-thumb-yh"></div>
+          <div class="outlet-name" style="margin-top:4px;">연합뉴스TV</div>
+          <div class="outlet-view">▶ 3.5K</div>
+          <div class="outlet-spec">직접</div>
+        </div>
+      </div>
+      <div class="d-outlet-row d-bm" style="bottom: 14px;">
+        <div class="outlet-card" style="border-top: 3px solid var(--spec-partial); width: 100%;">
+          <div class="d-thumb d-thumb-bm"></div>
+          <div class="outlet-name" style="margin-top:4px;">정치 채널 빅매치</div>
+          <div class="outlet-view">▶ 25K</div>
+          <div class="outlet-spec">부분 인용</div>
+        </div>
+      </div>
+      <div class="d-outlet-row d-kbs" style="bottom: 14px;">
+        <div class="outlet-card" style="border-top: 3px solid var(--spec-direct); width: 100%;">
+          <div class="d-thumb d-thumb-kbs"></div>
+          <div class="outlet-name" style="margin-top:4px;">KBS 뉴스7</div>
+          <div class="outlet-view">▶ 2.9K</div>
+          <div class="outlet-spec">직접</div>
+        </div>
+      </div>
+      <div class="d-outlet-row d-shorts" style="bottom: 14px;">
+        <div class="outlet-card" style="border-top: 3px solid var(--spec-transformed); width: 100%;">
+          <div class="d-thumb d-thumb-shorts"></div>
+          <div class="outlet-name" style="margin-top:4px;">shorts 재유통</div>
+          <div class="outlet-view">▶ 13K</div>
+          <div class="outlet-spec">2차 가공</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="footer-note">
+  Mock data 동일 · spectrum 5 colors · 같은 outlet 5개 (MBC 28K / 빅매치 25K / shorts 13K / 연합뉴스 3.5K / KBS 2.9K) · 디자인 비교용 sketch (production 아님)
+</div>
+</body>
+</html>
