@@ -1,8 +1,26 @@
-# PRISM Hero Design Journey (2026-05-13)
+# PRISM Design Journey (2026-05-13 → 2026-05-14)
 
-친구 [[김현미]]의 v5 Liquid Glass 시안을 base로 hero 디자인을 ~5시간 iterate한 결과물 + design exploration artifacts.
+친구 [[김현미]]의 v5 Liquid Glass 시안을 base로 hero 디자인을 ~5시간 iterate한 결과물 + design exploration artifacts. 5/14 v9에서 5/13 벡터 파이프라인 실데이터 통합.
 
-## 최종 디자인 ✨
+## 최신 — v9 real data integration (2026-05-14)
+
+**`docs/demo-v9.html`** — 5/13 벡터 파이프라인 sample 8 video × full schema를 Hero·MediaSpectrum·FLOW·SPREAD·TRACE·REACT 모두 swap.
+
+핵심 변경 (v8 → v9):
+
+1. **Hero (SpreadHero)**: 5 unique channel을 view_count desc로 mapping. authority_tier → spec spectrum 매핑.
+2. **매체 3시각 (MediaSpectrum)**: Step 7 max-disperse 선정 3 video (진태양난티비 + YTN 라디오 + 조선일보). 카드 line-clamp + max-height 156px.
+3. **Feature Vector 시각화**: 카드 hover 시 Plotly 3D scatter — origin (0,0,0)부터 뻗는 화살표 (`mode: 'lines+markers'`). 3축 모두 [0,1] 등규모 + 시간축 scale factor "× N" 명시.
+4. **흐름 (FlowMiniCard)**: 상단에 YouTube 썸네일 image 직접 (텍스트 description 폐기).
+5. **반응 (Reception)**: comments_inline top 4 + 80자 truncate + line-clamp 4.
+6. **확산 (DiffusionCurve)**: raw 8 video cumulative point (binning 폐기).
+7. **Mobile fallback**: matchMedia 768px detect → SVG 2D 화살표 (X-Z 평면 투영).
+
+비용: comments_fetch 8 video × 1 quota = 8 units. Anthropic 호출 0.
+
+**Lesson — "데이터 완전성 함정"**: v9 첫 iteration에서 "real data 다 넣자" 모드로 가서 transcript_summary + thumbnail_description + 3축 metric 모두 1 카드에 stacking → 박스 무너짐, 흐름 카드 텍스트 과다, vector 점만 있고 arrow magnitude 안 보임. Jack 피드백 후 v9.1: 정보 선별 + 화살표 redesign + 썸네일 image 직접. [[feedback_design_iteration_pattern]] "incremental edit ≠ quality 누적" 재확인.
+
+## 5/13 milestone — v8 hero (preserved)
 
 **`docs/demo-v8.html`** — Hero + Today 탭 final (2D web Image #4 ceiling 도달)
 
