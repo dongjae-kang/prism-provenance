@@ -1,24 +1,42 @@
 # PRISM Design Journey (2026-05-13 → 2026-05-14)
 
-친구 [[김현미]]의 v5 Liquid Glass 시안을 base로 hero 디자인을 ~5시간 iterate한 결과물 + design exploration artifacts. 5/14 v9에서 5/13 벡터 파이프라인 실데이터 통합.
+5/13 hero v8 + vector pipeline → 5/14 v9.2 final로 progressed. v9이 main deliverable, v8은 milestone reference로 보존.
 
-## 최신 — v9 real data integration (2026-05-14)
+## 최종 — v9.2 (2026-05-14)
 
-**`docs/demo-v9.html`** — 5/13 벡터 파이프라인 sample 8 video × full schema를 Hero·MediaSpectrum·FLOW·SPREAD·TRACE·REACT 모두 swap.
+**`docs/demo-v9.html`** — main demo (dev fetch 기반)
+**`docs/demo-v9-standalone.html`** — single-file (data inline, 332KB) for friend hand-off
 
-핵심 변경 (v8 → v9):
+### 핵심 features
 
-1. **Hero (SpreadHero)**: 5 unique channel을 view_count desc로 mapping. authority_tier → spec spectrum 매핑.
-2. **매체 3시각 (MediaSpectrum)**: Step 7 max-disperse 선정 3 video (진태양난티비 + YTN 라디오 + 조선일보). 카드 line-clamp + max-height 156px.
-3. **Feature Vector 시각화**: 카드 hover 시 Plotly 3D scatter — origin (0,0,0)부터 뻗는 화살표 (`mode: 'lines+markers'`). 3축 모두 [0,1] 등규모 + 시간축 scale factor "× N" 명시.
-4. **흐름 (FlowMiniCard)**: 상단에 YouTube 썸네일 image 직접 (텍스트 description 폐기).
-5. **반응 (Reception)**: comments_inline top 4 + 80자 truncate + line-clamp 4.
-6. **확산 (DiffusionCurve)**: raw 8 video cumulative point (binning 폐기).
-7. **Mobile fallback**: matchMedia 768px detect → SVG 2D 화살표 (X-Z 평면 투영).
+1. **양향자/추미애 balanced data** — 5/14 새벽 query `"양향자 추미애 경기지사"` max 20 → 16 video 선정 (양향자 15 + 추미애 14 + both 13). 5/13 자막 실측용 데이터 (추미애-only 8개)는 archive.
+2. **MDS 2D scatter (cosine 거리 보존)** — 1024차원 Voyage embedding의 cosine distance를 sklearn MDS로 평면 투영. 점 사이 시각 거리 = 실제 의미 거리. visual ↔ algorithmic consistency 자연 확보.
+3. **Vector arrows from centroid** — slim chevron + 2-stop gradient + drop shadow. SCALE 0.78로 위/아래 여백 균형.
+4. **임의 색상 3개** — indigo / teal / rose. 정치 성향·등급과 무관 명시.
+5. **"How" hover toggle** — dark button (ink-mid bg + white text), 헤더 우상단. Hover 시 작동 원리 fade in.
+6. **카드 3열 항상** — 모바일에서도 가로 정렬 (vertical stacking 회피). compact height ~92-110px.
+7. **Plot frame 자체가 main hero** — 흰색 card wrapper 폐기. 황토색 (#fafaf7) frame이 paper-2 위에 직접.
 
-비용: comments_fetch 8 video × 1 quota = 8 units. Anthropic 호출 0.
+### 빌드 chain
 
-**Lesson — "데이터 완전성 함정"**: v9 첫 iteration에서 "real data 다 넣자" 모드로 가서 transcript_summary + thumbnail_description + 3축 metric 모두 1 카드에 stacking → 박스 무너짐, 흐름 카드 텍스트 과다, vector 점만 있고 arrow magnitude 안 보임. Jack 피드백 후 v9.1: 정보 선별 + 화살표 redesign + 썸네일 image 직접. [[feedback_design_iteration_pattern]] "incremental edit ≠ quality 누적" 재확인.
+```
+~/Desktop/prism-pipeline-0513/scripts/
+  01b_yang_chu_balanced.py    # 신규 search query
+  06_sample_fill.py            # Haiku vision + 자막 + Voyage embedding
+  07_max_disperse.py           # max-disperse 3 selection
+  08_comments_fetch.py         # commentThreads.list per video
+  09_mds_projection.py         # 신규 — MDS 2D
+  build_standalone_v9.py       # JSON inline + embedding strip
+```
+
+### 학습 patterns (이번 iteration 산출)
+
+- **데이터 완전성 함정** — "real data 다 넣자" → 카드 무너짐. 정보 선별이 디자인의 일부.
+- **MDS visualization for high-dim cosine** — algorithmic 결과 (1024-dim cosine)와 시각 (2D 평면)이 mismatch될 때 MDS로 projection하면 자연 정합.
+- **Visual-algorithmic consistency** — 사용자가 보는 공간에서 알고리즘도 측정해야 동의 가능. (Cosine 유지 + MDS 투영이 그 답.)
+- **Discovery query 재활용 self-validation 필수** — 자막 실측용 query를 demo로 surface하면 자기 위반 가능. candidate balance check.
+- **격리 → 검증 → 통합 워크플로우** — `mds-test.html`로 SVG MDS 디자인 격리 iteration (10+ Jack rounds) → 완성 후 v9 React port. 큰 React 코드베이스에서 design polish 안전.
+- **음성 인식 정정** — Jack 발화 "보도 시각" → 텍스트 "세계관"으로 잘못 변환되는 패턴 감지 + 즉시 정정.
 
 ## 5/13 milestone — v8 hero (preserved)
 

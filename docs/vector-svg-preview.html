@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<title>PRISM v9 — 2D SVG vector preview (Path B)</title>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f6f3ec;
+    --paper-2: #ede8db;
+    --ink: #18181b;
+    --ink-mid: #44403c;
+    --ink-soft: #57534e;
+    --ink-faint: #a8a29e;
+    --rule: #d6d3d1;
+    --spec-canonical: #1e1b4b;
+    --spec-direct: #134e4a;
+    --spec-partial: #92400e;
+    --spec-transformed: #9f1239;
+    --spec-unverifiable: #57534e;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--paper); font-family: "Pretendard", sans-serif; color: var(--ink); }
+  .wrap { max-width: 920px; margin: 40px auto; padding: 0 24px; }
+  .title { font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mid); margin-bottom: 8px; }
+  .subtitle { font-size: 13px; color: var(--ink-soft); font-style: italic; margin-bottom: 20px; line-height: 1.5; }
+  .panel { background: white; border: 1px solid var(--rule); border-radius: 2px; padding: 24px; }
+  .mono { font-family: "JetBrains Mono", monospace; }
+  .caption { font-size: 11px; color: var(--ink-faint); margin-top: 14px; line-height: 1.6; font-family: "JetBrains Mono", monospace; }
+  .legend { display: flex; gap: 18px; margin-top: 12px; font-size: 11px; color: var(--ink-mid); flex-wrap: wrap; }
+  .legend-item { display: flex; align-items: center; gap: 6px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  h2 { font-family: "Source Serif 4", serif; font-weight: 600; font-size: 22px; margin: 0 0 8px 0; letter-spacing: -0.012em; }
+  .note { font-size: 12px; color: var(--ink-soft); padding: 14px; background: var(--paper-2); border-left: 3px solid var(--spec-canonical); margin-top: 24px; line-height: 1.6; border-radius: 2px; }
+  .note strong { color: var(--ink); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>매체별 위치 — 권위 / 표현 차이</h2>
+  <div class="subtitle">5개 매체 중 의미 표현이 가장 다른 3개를 자동 선정합니다. 좌·우 라벨은 부여하지 않습니다.</div>
+
+  <div class="panel">
+    <svg viewBox="0 0 820 480" style="width: 100%; height: auto; display: block;" font-family="Pretendard, sans-serif">
+      <defs>
+        <marker id="arrow-sel-1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#9f1239" />
+        </marker>
+        <marker id="arrow-sel-2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#92400e" />
+        </marker>
+        <marker id="arrow-sel-3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#1e1b4b" />
+        </marker>
+        <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#a8a29e" />
+        </marker>
+      </defs>
+
+      <!-- Plot area -->
+      <!-- viewBox 820x480, padding L=80 R=120 T=40 B=70 → plot 620x370 -->
+      <!-- Axes -->
+      <line x1="80" y1="410" x2="700" y2="410" stroke="#a8a29e" stroke-width="1.2" />
+      <line x1="80" y1="410" x2="80" y2="40" stroke="#a8a29e" stroke-width="1.2" />
+
+      <!-- X axis ticks: T5(0.2) T4(0.4) T3(0.6) T2(0.8) -->
+      <g font-family="JetBrains Mono, monospace" font-size="9.5" fill="#78716c">
+        <line x1="80" y1="410" x2="80" y2="415" stroke="#a8a29e" />
+        <text x="80" y="428" text-anchor="middle">0</text>
+        <line x1="204" y1="410" x2="204" y2="415" stroke="#a8a29e" />
+        <text x="204" y="428" text-anchor="middle">T5</text>
+        <line x1="328" y1="410" x2="328" y2="415" stroke="#a8a29e" />
+        <text x="328" y="428" text-anchor="middle">T4</text>
+        <line x1="452" y1="410" x2="452" y2="415" stroke="#a8a29e" />
+        <text x="452" y="428" text-anchor="middle">T3</text>
+        <line x1="576" y1="410" x2="576" y2="415" stroke="#a8a29e" />
+        <text x="576" y="428" text-anchor="middle">T2</text>
+        <line x1="700" y1="410" x2="700" y2="415" stroke="#a8a29e" />
+        <text x="700" y="428" text-anchor="middle">T1</text>
+        <text x="700" y="448" text-anchor="middle" font-size="11" fill="#44403c">매체 권위 →</text>
+        <text x="490" y="462" text-anchor="middle" font-size="9" fill="#a8a29e" font-style="italic">개인 채널 ← → 공식 발표</text>
+      </g>
+
+      <!-- Y axis ticks: drift 0~0.5 -->
+      <g font-family="JetBrains Mono, monospace" font-size="9.5" fill="#78716c">
+        <line x1="75" y1="410" x2="80" y2="410" stroke="#a8a29e" />
+        <text x="70" y="414" text-anchor="end">0</text>
+        <line x1="75" y1="299" x2="80" y2="299" stroke="#a8a29e" />
+        <text x="70" y="303" text-anchor="end">0.15</text>
+        <line x1="75" y1="188" x2="80" y2="188" stroke="#a8a29e" />
+        <text x="70" y="192" text-anchor="end">0.30</text>
+        <line x1="75" y1="77" x2="80" y2="77" stroke="#a8a29e" />
+        <text x="70" y="81" text-anchor="end">0.45</text>
+        <text x="34" y="220" text-anchor="middle" font-size="11" fill="#44403c" transform="rotate(-90 34 220)">표현 차이 (anchor 기준) →</text>
+      </g>
+
+      <!-- Light grid lines -->
+      <g stroke="#e7e5e4" stroke-width="0.7" stroke-dasharray="2 4">
+        <line x1="80" y1="299" x2="700" y2="299" />
+        <line x1="80" y1="188" x2="700" y2="188" />
+        <line x1="80" y1="77" x2="700" y2="77" />
+      </g>
+
+      <!-- Origin marker -->
+      <circle cx="80" cy="410" r="4" fill="#a8a29e" />
+      <text x="60" y="406" text-anchor="end" font-size="9" font-family="JetBrains Mono, monospace" fill="#a8a29e">anchor</text>
+
+      <!-- Triangle hull connecting selected 3 -->
+      <!-- 1분정치tv: x=0.2(T5), drift=0.253 → svg(204, 410-0.253/0.5*370)=(204, 222.78)
+           우팔롬아:    x=0.2(T5), drift=0.333 → svg(204, 410-0.333/0.5*370)=(204, 163.58)
+           에스더:      x=0.2(T5), drift=0.361 → svg(204, 410-0.361/0.5*370)=(204, 142.86) -->
+      <!-- All 3 selected at X=204 → triangle is degenerate (vertical line). Use offset for visibility -->
+
+      <!-- Non-selected gray arrows -->
+      <!-- MBN News (T2 0.8, drift 0.000) anchor itself, drawn as small marker -->
+      <g stroke="#cbc8c1" stroke-width="1" opacity="0.6">
+        <!-- 잇슈잇슈 T5 0.2, 0.231 -->
+        <line x1="80" y1="410" x2="204" y2="239" marker-end="url(#arrow-gray)" />
+        <!-- 뉴스핌TV T3 0.6, 0.297 -->
+        <line x1="80" y1="410" x2="452" y2="190" marker-end="url(#arrow-gray)" />
+        <!-- 바미TV T5 0.2, 0.282 -->
+        <line x1="80" y1="410" x2="204" y2="201" marker-end="url(#arrow-gray)" />
+        <!-- 숫자로 보는 세상 T5 0.2, 0.210 -->
+        <line x1="80" y1="410" x2="204" y2="254" marker-end="url(#arrow-gray)" />
+        <!-- 폴리버스 T5 0.2, 0.345 -->
+        <line x1="80" y1="410" x2="204" y2="155" marker-end="url(#arrow-gray)" />
+        <!-- MBN News (later) T2 0.8, 0.190 -->
+        <line x1="80" y1="410" x2="576" y2="269" marker-end="url(#arrow-gray)" />
+        <!-- 채널A T2 0.8, 0.327 -->
+        <line x1="80" y1="410" x2="576" y2="168" marker-end="url(#arrow-gray)" />
+        <!-- 조응천 중계석 T5 0.2, 0.229 -->
+        <line x1="80" y1="410" x2="204" y2="240" marker-end="url(#arrow-gray)" />
+        <!-- MBN News (third) T2 0.8, 0.261 -->
+        <line x1="80" y1="410" x2="576" y2="217" marker-end="url(#arrow-gray)" />
+        <!-- 뉴스데일리베스트 T5 0.2, 0.272 -->
+        <line x1="80" y1="410" x2="204" y2="209" marker-end="url(#arrow-gray)" />
+        <!-- 뉴스피스 T5 0.2, 0.261 -->
+        <line x1="80" y1="410" x2="204" y2="217" marker-end="url(#arrow-gray)" />
+        <!-- 골라봐TV T5 0.2, 0.231 -->
+        <line x1="80" y1="410" x2="204" y2="239" marker-end="url(#arrow-gray)" />
+      </g>
+
+      <!-- Anchor MBN News (T2, drift 0.0) -->
+      <circle cx="576" cy="410" r="6" fill="none" stroke="#a8a29e" stroke-width="1.5" />
+      <circle cx="576" cy="410" r="2.5" fill="#a8a29e" />
+
+      <!-- Selected 3 — thicker arrows from origin, spec colors -->
+      <line x1="80" y1="410" x2="204" y2="222.78" stroke="#1e1b4b" stroke-width="2.5" marker-end="url(#arrow-sel-3)" />
+      <line x1="80" y1="410" x2="204" y2="163.58" stroke="#92400e" stroke-width="2.5" marker-end="url(#arrow-sel-2)" />
+      <line x1="80" y1="410" x2="204" y2="142.86" stroke="#9f1239" stroke-width="2.5" marker-end="url(#arrow-sel-1)" />
+
+      <!-- Selected 3 endpoint dots + labels (offset to avoid overlap) -->
+      <g font-family="Pretendard, sans-serif" font-size="11" font-weight="600" fill="#18181b">
+        <!-- 1분정치tv -->
+        <circle cx="204" cy="222.78" r="6" fill="#1e1b4b" stroke="white" stroke-width="1.5" />
+        <text x="218" y="226" font-size="11" fill="#18181b">1분정치tv</text>
+        <text x="218" y="240" font-size="9" font-family="JetBrains Mono, monospace" fill="#78716c">drift 0.253</text>
+        <!-- 우팔롬아 -->
+        <circle cx="204" cy="163.58" r="6" fill="#92400e" stroke="white" stroke-width="1.5" />
+        <text x="218" y="167" font-size="11" fill="#18181b">우팔롬아</text>
+        <text x="218" y="180" font-size="9" font-family="JetBrains Mono, monospace" fill="#78716c">drift 0.333</text>
+        <!-- 에스더의 저녁tv -->
+        <circle cx="204" cy="142.86" r="6" fill="#9f1239" stroke="white" stroke-width="1.5" />
+        <text x="218" y="146" font-size="11" fill="#18181b">에스더의 저녁tv</text>
+        <text x="218" y="159" font-size="9" font-family="JetBrains Mono, monospace" fill="#78716c">drift 0.361</text>
+      </g>
+
+      <!-- Non-selected channel labels (small, gray) -->
+      <g font-family="Pretendard, sans-serif" font-size="9" fill="#a8a29e">
+        <text x="395" y="160" text-anchor="middle">채널A 뉴스TOP10</text>
+        <text x="465" y="183" text-anchor="middle">뉴스핌TV</text>
+        <text x="601" y="263" text-anchor="start">MBN News</text>
+        <text x="565" y="403" text-anchor="end">MBN News (anchor)</text>
+      </g>
+
+      <!-- Selection hull — vertical thin region highlighting -->
+      <rect x="194" y="142" width="20" height="82" fill="#9f1239" opacity="0.06" />
+
+      <!-- Top-right legend -->
+      <g transform="translate(720, 50)" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#44403c">
+        <text x="0" y="0" font-size="10" font-weight="700" letter-spacing="0.1em">선정 3</text>
+        <circle cx="6" cy="16" r="4" fill="#9f1239" />
+        <text x="14" y="20">에스더</text>
+        <circle cx="6" cy="32" r="4" fill="#92400e" />
+        <text x="14" y="36">우팔롬아</text>
+        <circle cx="6" cy="48" r="4" fill="#1e1b4b" />
+        <text x="14" y="52">1분정치</text>
+        <text x="0" y="78" font-size="10" font-weight="700" letter-spacing="0.1em">기타 13</text>
+        <line x1="0" y1="92" x2="14" y2="92" stroke="#a8a29e" stroke-width="1" />
+        <text x="18" y="95" fill="#78716c">화살표 = vector</text>
+      </g>
+    </svg>
+
+    <div class="caption">
+      8 채널 16 영상 중 max-disperse 알고리즘이 선정한 3 = 에스더의 저녁tv · 우팔롬아 · 1분정치tv (모두 T5 개인 채널). 분광 점수 0.996.
+      <br />선정 3은 같은 권위 layer (T5) 안에서 의미 표현이 가장 다른 3개. 메이저 매체(MBN, 채널A, 뉴스핌)는 framing이 비슷해 알고리즘에서 탈락.
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot" style="background: #9f1239;"></div>의미 차이 큼</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #92400e;"></div>중간</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #1e1b4b;"></div>의미 차이 작음</div>
+      <div class="legend-item"><div class="legend-dot" style="background: #a8a29e; opacity: 0.6;"></div>선정 안 됨</div>
+      <div class="legend-item"><div class="legend-dot" style="background: none; border: 1.5px solid #a8a29e;"></div>anchor</div>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>제 솔직한 진단</strong>: 5/14 sample은 선정 3개가 모두 T5 (X=권위 0.2)에 몰려 있어, 어떤 2D 투영을 해도 가로 방향 분산은 안 보입니다. 위 그림의 vertical band가 그 honest 결과입니다. 표현 차이 (Y축)에서는 0.253~0.361 range로 spread 있음. 만약 이 결과 자체가 "메이저 매체는 framing이 비슷, T5 개인 채널이 다양성 만든다"는 인사이트로 설득력 있다면 그대로 OK. 더 dramatic한 dispersion이 필요하면 (a) max-disperse에 tier diversity 강제 (b) 다른 trend로 demo 등 결정 가능. <br /><br />
+    <strong>이 미리보기 vs 현재 v9 Plotly</strong>: 무게 ~3KB (Plotly 3MB 대신), 항상 표시 (hover 안 씀), 모바일에서 native 렌더 (lag 없음), 채널명 모두 보임.
+  </div>
+</div>
+</body>
+</html>

@@ -4,157 +4,535 @@
   "algorithm": "max-disperse-pairwise-cosine",
   "selection": {
     "selected_video_ids": [
-      "og4lX7-wr2o",
-      "mpzT2Hv6VM4",
-      "ogBVY97IlMw"
+      "9AFbTLoAcAg",
+      "3lgn0PhLDb4",
+      "cOOEGcc8eig"
     ],
-    "pairwise_distance_sum": 1.1636,
-    "reasoning": "C(5, 3) brute force over unique-channel representatives. Maximize sum of (1 - cosine) over selected 3 embeddings."
+    "pairwise_distance_sum": 0.9957,
+    "reasoning": "C(14, 3) brute force over unique-channel representatives. Maximize sum of (1 - cosine) over selected 3 embeddings."
   },
   "all_channels": [
     {
-      "video_id": "og4lX7-wr2o",
+      "video_id": "opGH5o7-aqU",
       "channel": {
-        "id": "UCU748x7Pld-WbiskmSfLPgw",
-        "title": "진태양난티비",
+        "id": "UCgayFirXN6rNMIFgSFOMTyQ",
+        "title": "골라봐TV",
         "authority_tier": 5
       },
-      "title": "추미애 경기지사후보 오산 오색시장 방문과 상인회 간담회 장소로 이동 #shorts #추미애 #경기지사후보 #오산 오색시장 #상인회 #간담회",
+      "title": "경기도지사후보 지지하는 인물은? #추미애 #양향자",
       "axes": {
         "axis_authority": 0.2,
-        "axis_time_distance": 0.0113,
-        "axis_semantic_drift": 0.1408
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.2314
       },
       "embedding_3d_proxy": [
         0.2,
-        0.0113,
-        0.1408
-      ],
-      "selected": true
-    },
-    {
-      "video_id": "IOy4RBj5d8U",
-      "channel": {
-        "id": "UC0sho4-15VGRZYXzoYvr5NA",
-        "title": "정치뉴스(빨간맛파란맛)",
-        "authority_tier": 4
-      },
-      "title": "6.3지방선거 경기도지사 후보 추다르크... #경기도지사 #추미애 #더불어민주당  #정치뉴스 #쇼츠",
-      "axes": {
-        "axis_authority": 0.4,
-        "axis_time_distance": 0.0089,
-        "axis_semantic_drift": 0.2647
-      },
-      "embedding_3d_proxy": [
-        0.4,
-        0.0089,
-        0.2647
+        1.0,
+        0.2314
       ],
       "selected": false
     },
     {
-      "video_id": "f6DsR-Phzk4",
+      "video_id": "9XKIp3m3emU",
       "channel": {
-        "id": "UC_GObnYDEXuyg4ldHH5ADgA",
-        "title": "북극곰티비",
+        "id": "UCoPIYJpGiCBOl12LTZmpYKw",
+        "title": "폴리버스",
         "authority_tier": 5
       },
-      "title": "추미애 경기지사후보를 열렬히 환영하는 오산 오색시장 상인들 #shorts #추미애 #경기지사후보 #오산 오색시장 #환영 #포응",
+      "title": "추미애가 업어 키웠더니.. 배신을 하니 #추미애 #민주당 #양향자 #조응천 #경기지사",
       "axes": {
         "axis_authority": 0.2,
-        "axis_time_distance": 0.0006,
-        "axis_semantic_drift": 0.1565
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.3449
       },
       "embedding_3d_proxy": [
         0.2,
-        0.0006,
-        0.1565
+        1.0,
+        0.3449
       ],
       "selected": false
     },
     {
-      "video_id": "mpzT2Hv6VM4",
+      "video_id": "GjUpeAP3Nyw",
       "channel": {
-        "id": "UCwRljhjVWtLqAKbsWGPU_OA",
-        "title": "YTN 라디오",
+        "id": "UCPot3AVtEs_sl6Gqth8Ak_Q",
+        "title": "숫자로 보는 세상",
+        "authority_tier": 5
+      },
+      "title": "차기 경기도지사는 누구?! 🤔 추미애 vs 양향자 핵심 공약 한눈에 비교!",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.2104
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.2104
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "BlYMPePZ-GQ",
+      "channel": {
+        "id": "UCzDLR2GTRqNsIFSnLacmdKg",
+        "title": "조응천 중계석",
+        "authority_tier": 5
+      },
+      "title": "양향자 후보는 추미애 후보를 상대할 명분이 없잖아요",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.2285
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.2285
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "qbd04Llu-vo",
+      "channel": {
+        "id": "UCG9aFJTZ-lMCHAiO1KJsirg",
+        "title": "MBN News",
         "authority_tier": 2
       },
-      "title": "[조응천 인터뷰] \"당신들이 윤석열 만든거야!\" 조국·추미애 저격한 조응천! | #조응천 #추미애 #조국 #경기지사 #지방선거 #개혁신당",
+      "title": "[6·3 지선] '추다르크' 추미애 vs '고졸신화' 양향자…경기지사 '여성 맞대결' [MBN 뉴스센터]",
       "axes": {
         "axis_authority": 0.8,
-        "axis_time_distance": 0.0015,
-        "axis_semantic_drift": 0.3385
+        "axis_time_distance": 0.0,
+        "axis_semantic_drift": 0.0
       },
       "embedding_3d_proxy": [
         0.8,
-        0.0015,
-        0.3385
+        0.0,
+        0.0
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "1Gc4bd-b1Sc",
+      "channel": {
+        "id": "UCIIpmDPVk7nzNHEUSHmvkUg",
+        "title": "채널A 뉴스TOP10",
+        "authority_tier": 2
+      },
+      "title": "조응천 “추미애 어깨나 주무르던 분”…양향자 직격 / 채널A / 뉴스TOP10",
+      "axes": {
+        "axis_authority": 0.8,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.3271
+      },
+      "embedding_3d_proxy": [
+        0.8,
+        1.0,
+        0.3271
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "9AFbTLoAcAg",
+      "channel": {
+        "id": "UCALJIrWxBI68-JI84Jge0ag",
+        "title": "에스더의 저녁tv",
+        "authority_tier": 5
+      },
+      "title": "추미애 어깨 정성껏 주무르는 양향자.!! 울화가 치미네~",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.3608
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.3608
       ],
       "selected": true
     },
     {
-      "video_id": "ogBVY97IlMw",
+      "video_id": "3lgn0PhLDb4",
       "channel": {
-        "id": "UCdp4_yTBhQmB8E339Lafzow",
-        "title": "조선일보",
-        "authority_tier": 2
+        "id": "UCmU2QSsKOXO50J7jniDEK-Q",
+        "title": "1분정치tv",
+        "authority_tier": 5
       },
-      "title": "\"추미애도 못 여는 자물쇠\"? \"김동연 지사 저격\"? 추미애 홍보물 굴욕에 '급수정'했다 [흑백여의도]",
+      "title": "결국 터졌습니다! 경기도지사 최신 지지율, 이 정도 차이라고요? #추미애 #양향자 #조응천",
       "axes": {
-        "axis_authority": 0.8,
-        "axis_time_distance": 0.0007,
-        "axis_semantic_drift": 0.3341
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.2534
       },
       "embedding_3d_proxy": [
-        0.8,
-        0.0007,
-        0.3341
+        0.2,
+        1.0,
+        0.2534
       ],
       "selected": true
+    },
+    {
+      "video_id": "GFAs15BMTFY",
+      "channel": {
+        "id": "UCQY5NAsurwvNpDGGNLZ91zw",
+        "title": "바미TV",
+        "authority_tier": 5
+      },
+      "title": "충격 여조. 추미애 양향자 격차는?",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 0.6821,
+        "axis_semantic_drift": 0.2821
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        0.6821,
+        0.2821
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "535KoqaqPTM",
+      "channel": {
+        "id": "UC6UffeQm0oG7l0tIJW7ilzg",
+        "title": "뉴스피스",
+        "authority_tier": 5
+      },
+      "title": "경기도지사 후보 토론회 추미애 후보 전략 ㅋㅋ | #사장남천동 #오창석 #shorts",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.2607
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.2607
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "cOOEGcc8eig",
+      "channel": {
+        "id": "UCsteJIK-yA1PRfi4_VGBC2A",
+        "title": "우팔롬아",
+        "authority_tier": 5
+      },
+      "title": "(속보) 양향자 큰일났다, 충격 과거 공개...",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.3332
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.3332
+      ],
+      "selected": true
+    },
+    {
+      "video_id": "Yr6MygHiwQ8",
+      "channel": {
+        "id": "UC8p2BFLsMGSfBdpwNs4Zq1A",
+        "title": "뉴스데일리베스트",
+        "authority_tier": 5
+      },
+      "title": "추미애 유세 현장서 딱 걸렸다… 양향자 고발 간다 왜?",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 1.0,
+        "axis_semantic_drift": 0.272
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        1.0,
+        0.272
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "-wWL-Yr6wjI",
+      "channel": {
+        "id": "UCxPm6oEiIK0RHEcOQkK1c4g",
+        "title": "잇슈잇슈",
+        "authority_tier": 5
+      },
+      "title": "경기도지사로 가장 적합한 인물은? #추미애 #양향자 #조응천",
+      "axes": {
+        "axis_authority": 0.2,
+        "axis_time_distance": 0.4421,
+        "axis_semantic_drift": 0.2314
+      },
+      "embedding_3d_proxy": [
+        0.2,
+        0.4421,
+        0.2314
+      ],
+      "selected": false
+    },
+    {
+      "video_id": "yIgXB7dhQBQ",
+      "channel": {
+        "id": "UCq7af5lj-gUy1qeN9DlNI9g",
+        "title": "뉴스핌TV",
+        "authority_tier": 3
+      },
+      "title": "양향자, 장동혁 약속 폭로(?)...\"매일 업어준다더라\"",
+      "axes": {
+        "axis_authority": 0.6,
+        "axis_time_distance": 0.5291,
+        "axis_semantic_drift": 0.2975
+      },
+      "embedding_3d_proxy": [
+        0.6,
+        0.5291,
+        0.2975
+      ],
+      "selected": false
     }
   ],
   "distance_matrix": {
     "labels": [
-      "진태양난티비",
-      "정치뉴스(빨간맛파란맛)",
-      "북극곰티비",
-      "YTN 라디오",
-      "조선일보"
+      "골라봐TV",
+      "폴리버스",
+      "숫자로 보는 세상",
+      "조응천 중계석",
+      "MBN News",
+      "채널A 뉴스TOP10",
+      "에스더의 저녁tv",
+      "1분정치tv",
+      "바미TV",
+      "뉴스피스",
+      "우팔롬아",
+      "뉴스데일리베스트",
+      "잇슈잇슈",
+      "뉴스핌TV"
     ],
     "matrix": [
       [
         0.0,
-        0.3058,
-        0.0922,
-        0.4302,
-        0.3668
+        0.273,
+        0.1647,
+        0.1774,
+        0.2314,
+        0.2689,
+        0.2991,
+        0.109,
+        0.2416,
+        0.1863,
+        0.3062,
+        0.2715,
+        0.1332,
+        0.2713
       ],
       [
-        0.3058,
+        0.273,
         0.0,
-        0.3008,
-        0.31,
-        0.2839
+        0.2712,
+        0.2176,
+        0.3449,
+        0.2479,
+        0.2467,
+        0.2882,
+        0.2398,
+        0.2363,
+        0.263,
+        0.262,
+        0.2494,
+        0.2243
       ],
       [
-        0.0922,
-        0.3008,
+        0.1647,
+        0.2712,
         0.0,
-        0.4138,
-        0.3749
+        0.2114,
+        0.2104,
+        0.2843,
+        0.3114,
+        0.2157,
+        0.2435,
+        0.1981,
+        0.3184,
+        0.2669,
+        0.168,
+        0.2685
       ],
       [
-        0.4302,
-        0.31,
-        0.4138,
+        0.1774,
+        0.2176,
+        0.2114,
         0.0,
-        0.3666
+        0.2285,
+        0.2013,
+        0.2504,
+        0.17,
+        0.221,
+        0.1746,
+        0.2797,
+        0.2358,
+        0.1384,
+        0.2066
       ],
       [
-        0.3668,
-        0.2839,
-        0.3749,
-        0.3666,
+        0.2314,
+        0.3449,
+        0.2104,
+        0.2285,
+        0.0,
+        0.3271,
+        0.3608,
+        0.2534,
+        0.2821,
+        0.2607,
+        0.3332,
+        0.272,
+        0.2314,
+        0.2975
+      ],
+      [
+        0.2689,
+        0.2479,
+        0.2843,
+        0.2013,
+        0.3271,
+        0.0,
+        0.1911,
+        0.2891,
+        0.2189,
+        0.2372,
+        0.2991,
+        0.2204,
+        0.2465,
+        0.2276
+      ],
+      [
+        0.2991,
+        0.2467,
+        0.3114,
+        0.2504,
+        0.3608,
+        0.1911,
+        0.0,
+        0.3476,
+        0.1543,
+        0.2445,
+        0.2939,
+        0.2767,
+        0.277,
+        0.2302
+      ],
+      [
+        0.109,
+        0.2882,
+        0.2157,
+        0.17,
+        0.2534,
+        0.2891,
+        0.3476,
+        0.0,
+        0.2983,
+        0.1969,
+        0.3542,
+        0.3215,
+        0.1449,
+        0.3132
+      ],
+      [
+        0.2416,
+        0.2398,
+        0.2435,
+        0.221,
+        0.2821,
+        0.2189,
+        0.1543,
+        0.2983,
+        0.0,
+        0.233,
+        0.2362,
+        0.2399,
+        0.2449,
+        0.214
+      ],
+      [
+        0.1863,
+        0.2363,
+        0.1981,
+        0.1746,
+        0.2607,
+        0.2372,
+        0.2445,
+        0.1969,
+        0.233,
+        0.0,
+        0.3256,
+        0.2426,
+        0.1794,
+        0.2256
+      ],
+      [
+        0.3062,
+        0.263,
+        0.3184,
+        0.2797,
+        0.3332,
+        0.2991,
+        0.2939,
+        0.3542,
+        0.2362,
+        0.3256,
+        0.0,
+        0.284,
+        0.3322,
+        0.252
+      ],
+      [
+        0.2715,
+        0.262,
+        0.2669,
+        0.2358,
+        0.272,
+        0.2204,
+        0.2767,
+        0.3215,
+        0.2399,
+        0.2426,
+        0.284,
+        0.0,
+        0.2606,
+        0.2362
+      ],
+      [
+        0.1332,
+        0.2494,
+        0.168,
+        0.1384,
+        0.2314,
+        0.2465,
+        0.277,
+        0.1449,
+        0.2449,
+        0.1794,
+        0.3322,
+        0.2606,
+        0.0,
+        0.2631
+      ],
+      [
+        0.2713,
+        0.2243,
+        0.2685,
+        0.2066,
+        0.2975,
+        0.2276,
+        0.2302,
+        0.3132,
+        0.214,
+        0.2256,
+        0.252,
+        0.2362,
+        0.2631,
         0.0
       ]
     ]
@@ -162,142 +540,5098 @@
   "all_combinations_ranked": [
     {
       "channels": [
-        "진태양난티비",
-        "YTN 라디오",
-        "조선일보"
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "우팔롬아"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "mpzT2Hv6VM4",
-        "ogBVY97IlMw"
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 1.1636,
+      "sum_pairwise_distance": 0.9957,
       "is_winner": true
     },
     {
       "channels": [
-        "북극곰티비",
-        "YTN 라디오",
-        "조선일보"
+        "MBN News",
+        "에스더의 저녁tv",
+        "우팔롬아"
       ],
       "video_ids": [
-        "f6DsR-Phzk4",
-        "mpzT2Hv6VM4",
-        "ogBVY97IlMw"
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 1.1553,
+      "sum_pairwise_distance": 0.988,
       "is_winner": false
     },
     {
       "channels": [
-        "진태양난티비",
-        "정치뉴스(빨간맛파란맛)",
-        "YTN 라디오"
+        "MBN News",
+        "에스더의 저녁tv",
+        "1분정치tv"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "IOy4RBj5d8U",
-        "mpzT2Hv6VM4"
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
       ],
-      "sum_pairwise_distance": 1.046,
+      "sum_pairwise_distance": 0.9619,
       "is_winner": false
     },
     {
       "channels": [
-        "정치뉴스(빨간맛파란맛)",
-        "북극곰티비",
-        "YTN 라디오"
+        "1분정치tv",
+        "우팔롬아",
+        "뉴스데일리베스트"
       ],
       "video_ids": [
-        "IOy4RBj5d8U",
-        "f6DsR-Phzk4",
-        "mpzT2Hv6VM4"
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
       ],
-      "sum_pairwise_distance": 1.0246,
+      "sum_pairwise_distance": 0.9597,
       "is_winner": false
     },
     {
       "channels": [
-        "정치뉴스(빨간맛파란맛)",
-        "YTN 라디오",
-        "조선일보"
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "우팔롬아"
       ],
       "video_ids": [
-        "IOy4RBj5d8U",
-        "mpzT2Hv6VM4",
-        "ogBVY97IlMw"
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 0.9606,
+      "sum_pairwise_distance": 0.9594,
       "is_winner": false
     },
     {
       "channels": [
-        "정치뉴스(빨간맛파란맛)",
-        "북극곰티비",
-        "조선일보"
+        "폴리버스",
+        "MBN News",
+        "에스더의 저녁tv"
       ],
       "video_ids": [
-        "IOy4RBj5d8U",
-        "f6DsR-Phzk4",
-        "ogBVY97IlMw"
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg"
       ],
-      "sum_pairwise_distance": 0.9596,
+      "sum_pairwise_distance": 0.9524,
       "is_winner": false
     },
     {
       "channels": [
-        "진태양난티비",
-        "정치뉴스(빨간맛파란맛)",
-        "조선일보"
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "뉴스데일리베스트"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "IOy4RBj5d8U",
-        "ogBVY97IlMw"
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
       ],
-      "sum_pairwise_distance": 0.9565,
+      "sum_pairwise_distance": 0.9458,
       "is_winner": false
     },
     {
       "channels": [
-        "진태양난티비",
-        "북극곰티비",
-        "YTN 라디오"
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "우팔롬아"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "f6DsR-Phzk4",
-        "mpzT2Hv6VM4"
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 0.9361,
+      "sum_pairwise_distance": 0.9424,
       "is_winner": false
     },
     {
       "channels": [
-        "진태양난티비",
-        "북극곰티비",
-        "조선일보"
+        "폴리버스",
+        "MBN News",
+        "우팔롬아"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "f6DsR-Phzk4",
-        "ogBVY97IlMw"
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 0.8339,
+      "sum_pairwise_distance": 0.9411,
       "is_winner": false
     },
     {
       "channels": [
-        "진태양난티비",
-        "정치뉴스(빨간맛파란맛)",
-        "북극곰티비"
+        "MBN News",
+        "1분정치tv",
+        "우팔롬아"
       ],
       "video_ids": [
-        "og4lX7-wr2o",
-        "IOy4RBj5d8U",
-        "f6DsR-Phzk4"
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
       ],
-      "sum_pairwise_distance": 0.6987,
+      "sum_pairwise_distance": 0.9408,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.9236,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.9198,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.9195,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.9194,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.9096,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.9054,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.903,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.9018,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8991,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8968,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.8913,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.891,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8893,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8886,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8885,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8882,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8864,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8828,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.8826,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8825,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.879,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8789,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8778,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "우팔롬아",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8767,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8767,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8747,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8742,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8717,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8709,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8708,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8695,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8693,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8692,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8668,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8667,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.866,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.864,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.864,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.862,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8619,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8617,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8597,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8549,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8546,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8525,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8522,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8522,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8515,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "MBN News"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.8493,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8473,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "우팔롬아",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8473,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8469,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8446,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8422,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8421,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.8418,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8414,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.8397,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8389,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8371,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8338,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8313,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.831,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8299,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8295,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.8292,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "바미TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8281,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8279,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.8274,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "MBN News"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.8265,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8263,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "MBN News",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "qbd04Llu-vo",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8257,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8257,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8255,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.8253,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.825,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8249,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8239,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.8218,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8195,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.8188,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8185,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.818,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8143,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.8132,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8101,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.81,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8094,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.809,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8066,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8063,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8058,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "채널A 뉴스TOP10",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.805,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.804,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8039,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.8036,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8035,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.8034,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8032,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8006,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.8002,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.8002,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.8,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7994,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7981,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7974,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7973,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7947,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7941,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7937,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.792,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "MBN News"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.791,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.7899,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7892,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.7891,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.789,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7868,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7854,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7841,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.784,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7838,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7804,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.78,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스피스",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7798,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7791,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7788,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7765,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7761,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7758,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7753,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7751,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.775,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.775,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7731,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7731,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "우팔롬아",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7723,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.772,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7716,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7716,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7715,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7702,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7695,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7694,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7687,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.768,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7679,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7641,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.764,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7638,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7632,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7628,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.761,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7608,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7602,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "우팔롬아",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "cOOEGcc8eig",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7601,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스데일리베스트",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7599,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7591,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7584,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7575,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.7568,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7563,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.7557,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7552,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7545,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7545,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7541,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.754,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7531,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7503,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "우팔롬아",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7502,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7493,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "바미TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7467,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7454,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7439,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7431,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7417,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7409,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7394,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.739,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7383,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7372,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.7368,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7368,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7363,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "바미TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7361,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7357,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7341,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7326,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "바미TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7317,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7303,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7298,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7294,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7281,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7275,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7275,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7273,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.727,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.727,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7268,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7261,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7233,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7226,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7219,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7215,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7214,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7211,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7197,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.7179,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7155,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7154,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7147,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.7146,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.714,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7109,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7103,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7093,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7092,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7091,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "숫자로 보는 세상"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw"
+      ],
+      "sum_pairwise_distance": 0.7088,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7076,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.7066,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.7056,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7045,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7045,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7031,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "우팔롬아",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "cOOEGcc8eig",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7022,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.702,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7012,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.7009,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7004,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.7003,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.7002,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "조응천 중계석"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ"
+      ],
+      "sum_pairwise_distance": 0.7001,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6999,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6996,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "채널A 뉴스TOP10",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6988,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.697,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6967,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6956,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6954,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.695,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6935,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6924,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6923,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6905,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6902,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6898,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6893,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6891,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "숫자로 보는 세상",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GjUpeAP3Nyw",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6886,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6882,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.688,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6872,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6865,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6862,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.6857,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6847,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "바미TV",
+        "우팔롬아"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY",
+        "cOOEGcc8eig"
+      ],
+      "sum_pairwise_distance": 0.6844,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6842,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6832,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6826,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6825,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6806,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.6795,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6791,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스데일리베스트",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "Yr6MygHiwQ8",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6786,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6784,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6783,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6782,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6762,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "바미TV"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6759,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.6758,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6746,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6729,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6726,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6715,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "바미TV",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6709,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.6702,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6694,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6693,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "뉴스피스",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.668,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "조응천 중계석"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ"
+      ],
+      "sum_pairwise_distance": 0.668,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6676,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.667,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.6668,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6657,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6654,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6651,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6638,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6632,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6608,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6605,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.6604,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.6574,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "바미TV",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GFAs15BMTFY",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6572,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6564,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "폴리버스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "9XKIp3m3emU",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6557,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6554,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스피스",
+        "뉴스데일리베스트"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM",
+        "Yr6MygHiwQ8"
+      ],
+      "sum_pairwise_distance": 0.653,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.6519,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "MBN News"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.6503,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6498,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6489,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6489,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "채널A 뉴스TOP10",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6487,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6486,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "채널A 뉴스TOP10"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc"
+      ],
+      "sum_pairwise_distance": 0.6476,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg"
+      ],
+      "sum_pairwise_distance": 0.6428,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6417,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "바미TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6411,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6408,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "바미TV"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.64,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "MBN News"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.6373,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6355,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스데일리베스트",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "Yr6MygHiwQ8",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6347,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6318,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "MBN News",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6297,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "바미TV",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6286,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6285,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.6257,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6197,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6131,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.6107,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "MBN News",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6098,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "잇슈잇슈",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "-wWL-Yr6wjI",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6081,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스피스",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.6068,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "MBN News"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "qbd04Llu-vo"
+      ],
+      "sum_pairwise_distance": 0.6065,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "폴리버스",
+        "조응천 중계석",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "9XKIp3m3emU",
+        "BlYMPePZ-GQ",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6054,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "바미TV",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "GFAs15BMTFY",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.6042,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "에스더의 저녁tv",
+        "바미TV",
+        "뉴스핌TV"
+      ],
+      "video_ids": [
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY",
+        "yIgXB7dhQBQ"
+      ],
+      "sum_pairwise_distance": 0.5985,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "MBN News",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "qbd04Llu-vo",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5983,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.5971,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5961,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "MBN News",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "qbd04Llu-vo",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.5937,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "채널A 뉴스TOP10",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "1Gc4bd-b1Sc",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5862,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.5841,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "채널A 뉴스TOP10",
+        "에스더의 저녁tv",
+        "바미TV"
+      ],
+      "video_ids": [
+        "1Gc4bd-b1Sc",
+        "9AFbTLoAcAg",
+        "GFAs15BMTFY"
+      ],
+      "sum_pairwise_distance": 0.5643,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "조응천 중계석"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ"
+      ],
+      "sum_pairwise_distance": 0.5534,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.5491,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5455,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.5415,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.5383,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5286,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "1분정치tv",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "3lgn0PhLDb4",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5212,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "숫자로 보는 세상",
+        "조응천 중계석",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "GjUpeAP3Nyw",
+        "BlYMPePZ-GQ",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.5177,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.4989,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "뉴스피스",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "535KoqaqPTM",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.4924,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "뉴스피스"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "535KoqaqPTM"
+      ],
+      "sum_pairwise_distance": 0.4921,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.4893,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "숫자로 보는 세상",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "GjUpeAP3Nyw",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.4659,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "1분정치tv"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4"
+      ],
+      "sum_pairwise_distance": 0.4564,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "조응천 중계석",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "BlYMPePZ-GQ",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.4533,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "조응천 중계석",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "BlYMPePZ-GQ",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.449,
+      "is_winner": false
+    },
+    {
+      "channels": [
+        "골라봐TV",
+        "1분정치tv",
+        "잇슈잇슈"
+      ],
+      "video_ids": [
+        "opGH5o7-aqU",
+        "3lgn0PhLDb4",
+        "-wWL-Yr6wjI"
+      ],
+      "sum_pairwise_distance": 0.3871,
       "is_winner": false
     }
   ]
